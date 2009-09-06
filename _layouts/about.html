@@ -29,7 +29,7 @@ layout: default
     <li class="prev">
       {% for post in site.posts %}
       {%  if post.next.title == page.title %}
-      <a href="{{post.url}}" rel="Prev Section" title="Previous project (accesskey 7)" accesskey="7">Previous: {{post.name}} &larr;</a>
+      <a href="{{post.url}}/" rel="Prev Section" title="Previous project (accesskey 7)" accesskey="7">Previous: {{post.name}} &larr;</a>
       {%  endif %}
       {% endfor %}
     </li>  
@@ -37,7 +37,7 @@ layout: default
     <li class="next">
       {% for post in site.posts %}
       {%  if post.previous.title == page.title %}
-      <a href="{{post.url}}" rel="Next Section" title="Next project (accesskey 9)" accesskey="9">&rarr; Next: {{post.name}}</a>
+      <a href="{{post.url}}/" rel="Next Section" title="Next project (accesskey 9)" accesskey="9">&rarr; Next: {{post.name}}</a>
       {%  endif %}
       {% endfor %}
     </li>  
