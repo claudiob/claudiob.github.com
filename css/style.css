@@ -65,7 +65,7 @@ ol li em { display: block; color: #999;}
 /* OTHER PAGES */
 
 #content p {text-indent: 0.75em; text-align: left; font-family: 'Hoefler Text'; font-size: 1.05em; line-height: 1.45em; padding: 3px 0px 3px 0;}
-#content img {border: 1px dashed #f9f9f9; clear: both; float: left; width: 800px; margin: 10px 0 10px 0;}
+#content img {border: 1px dashed #f9f9f9; clear: both; float: left; width: 798px; height: 268px; margin: 10px 0 10px 0;}
 #content {width: 800px; margin: 0 auto 0 auto; }
 #title {clear: left; float: left; width: 75%; line-height: 1em; font-family: 'Hoefler Text'; font-size: 2.7em; padding: 15px 0 5px 0; margin: 0; text-align: left;}
 .download {clear: right; float: right; width: 25%; font-size: 1.2em; margin-top: 0.8em; background-color: #f0f5f0; padding: 7px 0px 7px 0px; letter-spacing: -1px; font-weight: bold; sline-height: 0.1em;}
