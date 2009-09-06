@@ -5,7 +5,7 @@ name: Coding projects
 
 <ol class="listProjects">
 {% for post in site.posts reversed %}
-  <li class="{% cycle 'class="left"', '', 'class="right"' %}">
+  <li{% cycle ' class="left"', '', ' class="right"' %}>
     <a href="{{ post.url }}" title="More on {{ post.name }} {{ post.period }}">
   	<span class="proj">{{ post.name }}</span>
   	<em>{{ post.language | downcase }}</em>
