@@ -1,107 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<title>Claudio Baccigalupo &sect; Projects</title>
+---
+layout: default
+name: Coding projects
+---
 
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<meta http-equiv="Content-Language" content="en" />
-<meta name="language" content="en" />
-<meta name="robots" content="all" />
-<meta http-equiv="imagetoolbar" content="false" />
-
-<meta name="author" content="claudio@iiia.csic.es" />
-<meta name="Copyright" content="Claudio Baccigalupo" />
-<meta name="Version" content="3.0" />
-
-<meta name="description" content="Claudio Baccigalupo's home-page at GitHub" />
-<meta name="keywords" content="recommending systems, CBR, case-based reasoning, playlists, contiguous sequential patterns, playlist recommender" />
-<meta name="viewport" content="width=924" />
-<link href="layout.css" rel="stylesheet" type="text/css" media="screen" />
-</head>
-
-<body class="pageIsProjects">
-
-<div id="header_box">
-  <div class="header_content">
-    <h1 class="title"><a href="/" title="Home">Claudio Baccigalupo - Home</a></h1>
-    <h3 class="welcome">I am a Ph.D. candidate in A.I., a Web developer and a musician.
-      I am accepting new work from June, so feel free to get in touch!</h3>
-  		<ul class="menu">
-  		  <li class="menuAbout"><a href="http://neurain.com">About Me</a></li>
-  			<li class="menuPapers"><a href="http://www.iiia.csic.es/~claudio">Publications</a></li>
-  			<li class="menuProjects"><a href="http://claudiob.github.com">Projects</a></li>
-  			<li class="menuMusic"><a href="http://www.last.fm/user/claudiob">Music &amp; More</a></li>
-  		</ul>
-  </div>
-</div>
-
-<div id="document_box">
 <ol class="listProjects">
-	
-	<li class="left">
-		<h2>MySpace Robot</h2><div class="year">2009&mdash;</div>
-		<a href="http://github.com/claudiob/myspacerobot" title="MySpace Robot GitHub repository">
-			<img src="img/banner_myspacerobot.jpg" alt="Project screenshot" />
-		</a>
-		<p>I have helped MySpace listeners find new and hidden bands that sound like music they already know.<br />
-		  <a href="http://github.com/claudiob/myspacerobot" title="MySpace Robot GitHub repository">Fork the GitHub repository</a> [Python].
-		</p>
-	</li>
-	<li class="right">
-		<h2>Poolcasting Radio</h2><div class="year">2007&mdash;</div>
-		<a href="http://github.com/claudiob/poolcasting" title="Poolcasting GitHub repository">
-			<img src="img/banner_poolcasting.gif" alt="Project screenshot" />
-		</a>
-		<p>I have enabled friends to listen to online radio channels customised for their preferences, without the need for a DJ.<br />
-		  <a href="http://github.com/claudiob/poolcasting" title="Poolcasting GitHub repository">Fork the GitHub repository</a> [Ruby on Rails]. </p>	
-	</li>
-
-	<li class="left">
-		<h2>Fuzzy music genres</h2><div class="year">2008</div>
-		<a href="http://claudiob.github.com/affinity" title="Affinity GitHub page">
-			<img src="img/banner_fuzzygenres.gif" alt="Project screenshot" />
-		</a>
-		<p>I have uncovered fuzzy affinity among artists that go beyond Boolean categories such as genres and tags.<br />
-		  <a href="http://claudiob.github.com/affinity" title="Affinity GitHub page">Read about the results</a> and <a href="http://github.com/claudiob/affinity" title="Affinity GitHub repository">fork the GitHub repository</a> [R].
-    </p>
-	</li>
-	<li class="right">
-		<h2>Iterated social choice</h2><div class="year">2009&mdash;</div>
-		<a href="http://wiki.github.com/claudiob/iteratedsocialchoice" title="Iterated Social Choice GitHub wiki page">
-			<img src="img/banner_iterated.gif" alt="Project screenshot" />
-		</a>
-		<p>I have developed a new method to aggregate the different preferences of persons wishing to experience together.<br /> 
-			<a href="http://wiki.github.com/claudiob/iteratedsocialchoice" title="Iterated Social Choice GitHub wiki page">Read about the results</a> and <a href="http://github.com/claudiob/iteratedsocialchoice" title="Iterated Social Choice GitHub repository">fork the GitHub repository</a> [R].</p>	
-	</li>
-<!--
-	<li class="left">
-		<h2>Playlist Generator</h2><div class="year">2006</div>
-		<a href="/projects/playlists" title="Visit project">
-			<img src="img/banner_generator.gif" alt="Project screenshot" />
-		</a>
-		<p>I have helped MySpace listeners find new and hidden bands that sound like music they already know.
-		  You can download the Python library and read about the on-line evaluation <a href="/projects/myspacerobot" title="Visit Project">here</a>.
-		</p>
-	</li>
-	<li class="right">
-		<h2>Box Office Data</h2><div class="year">2002&mdash;2003</div>
-		<a href="/projects/soundtrack" title="Visit project">
-			<img src="img/banner_soundtrack.gif" alt="Project screenshot" />
-		</a>
-		<p>I have compared the structures of MusicStrands, Last.fm and Yes.com in terms of co-occurrence of songs in playlists and radio programmes.
-		   You can read about the analysis <a href="/projects/evaluation" title="Visit Project">here</a>. </p>	
-	</li>
--->
+{% for post in site.posts reversed %}
+  <li class="{% cycle 'class="left"', '', 'class="right"' %}">
+    <a href="{{ post.url }}" title="More on {{ post.name }} {{ post.period }}">
+  	<span class="proj">{{ post.name }}</span>
+  	<em>{{ post.language | downcase }}</em>
+  	<img src="/images/{{post.title|downcase}}_home.png" alt="Project screenshot" />
+  	<span class="desc">{{post.desc}} (<span class="link">more&hellip;</span>)
+  	</span>
+    </a>
+  </li>
+{% endfor %}
 </ol>
-</div>
 
-<div id="footer_box">
-    Updated: 2009.05.08&nbsp; 
-    &nbsp;<q>Nothing short of everything will really do</q>&nbsp; 
-    &nbsp;Contact: <span style="letter-spacing: -2px;"> c l a u d i o b @ g m a i l  . c o m</span>
-    <!--&lt;Subscribe to <a href="">RSS</a>&gt;-->
-</div>
-
-</body>	
-</html>
+  
