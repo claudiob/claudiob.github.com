@@ -7,6 +7,13 @@ layout: default
 {%  assign link = 'Visit the page' %}
 {% endif %}
 
+{% if page.title == 'About' %}
+{%  assign subtitle = 'resuming my' %}
+{% else %}
+{%  assign subtitle = 'coded in' %}
+{% endif %}
+
+
 {% capture in %}in <em>{{ page.to }}</em>{% endcapture %}
 {% capture between %}between <em>{{ page.from }}</em> and <em>{{ page.to }}</em>{% endcapture %}
 {% if page.from == page.to %} 
@@ -24,27 +31,28 @@ layout: default
 {% endif %}
 
 <div id="content">
-  <h2 id="title">{{ page.name | replace:'/','<span>/</span>' }}</h2>
-  <a href="{{ page.link }}" class="download">{{ link }}</a>
-  <div id="subtitle">
-    coded in <em>{{ page.language | downcase }}</em> {{ period }} {{ status }}
-  </div>
-  
+  <h2>{{ page.name | replace:'/','<span>/</span>' }}</h2>
+  {% if page.link %}
+  <a href="{{ page.link }}" class="download" title="{{link}}">{{link}}</a>
+  {% endif %}
+  <h3>
+  {{subtitle}} <em>{{ page.language | downcase }}</em> {{period}} {{status}}
+  </h3>
   {{ content }}
 
   <ul>
     <li class="prev">
       {% for post in site.posts %}
       {%  if post.next.title == page.title %}
-      <a href="{{post.url}}/" rel="Prev Section" title="Previous project (accesskey 7)" accesskey="7">Previous: {{post.name}} &larr;</a>
+      <a href="{{post.url}}/" rel="prev" title="Previous project (accesskey 7)" accesskey="7">Previous: {{post.name}} &larr;</a>
       {%  endif %}
       {% endfor %}
     </li>  
-    <li><a href="/" rel="Homepage" title="Home Page">Back to projects</a></li>
+    <li><a href="/" rel="start" title="Home Page (accesskey 0)" accesskey="0">Back to projects</a></li>
     <li class="next">
       {% for post in site.posts %}
       {%  if post.previous.title == page.title %}
-      <a href="{{post.url}}/" rel="Next Section" title="Next project (accesskey 9)" accesskey="9">&rarr; Next: {{post.name}}</a>
+      <a href="{{post.url}}/" rel="next" title="Next project (accesskey 9)" accesskey="9">&rarr; Next: {{post.name}}</a>
       {%  endif %}
       {% endfor %}
     </li>  

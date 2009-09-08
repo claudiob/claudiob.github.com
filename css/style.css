@@ -1,89 +1,92 @@
 /* RESET DEFAULT */
-*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h5, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td { margin:0; padding:0 }
-table { border-collapse:collapse; border-spacing:0 }
-fieldset, img { border:0 }
-address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal }
-ol, ul, li { list-style:none }
-caption, th { text-align:left }
-h1, h2, h3, h5, h5, h6 { font-size:100% }
-q:before, q:after { content:''}
-strong { font-weight: bold }
-em { font-style: italic }
-ol, ul, li { list-style:none }
-* a { position:relative } 
-a { outline:none }        
-a img { border:none }     
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h5, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td {margin:0; padding:0}
+address, caption, cite, code, dfn, em, strong, th, var {font-style:normal; font-weight:normal}
+h1, h2, h3, h5, h5, h6  {font-size:100%}
+table                   {border-collapse:collapse; border-spacing:0}
+fieldset, img           {border:0}
+ol, ul, li              {list-style:none}
+caption, th             {text-align:left}
+q:before, q:after       {content:''}
+strong                  {font-weight: bold}
+em                      {font-style: italic}
+ol, ul, li              {list-style:none}
+* a                     {position:relative} 
+a                       {outline:none}        
+a img                   {border:none}     
 
 /* TYPOGRAPHY */
-body                   { font-family: 'Geneva', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif }
-#welcome, em, .proj, q, #content p, #title { font-family: 'Hoefler Text', Georgia, 'Times New Roman', Times, serif bold;}
+body                    {font-family: 'Geneva', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif}
+h2, em, q, p, .header   {font-family: 'Hoefler Text', Georgia, 'Times New Roman', Times, serif bold;}
 
-body          { text-align: center; }
-#welcome      { font-size: 1.15em; line-height: 1.35em; letter-spacing: -1px;}
-#footer_box   { font-size: 0.7em; line-height: 2em;}
-.proj         { font-size: 1.2em;  font-weight: bold;}
-em            { font-variant: small-caps; font-style: normal; letter-spacing: 0px; }
-.desc         { font-size: 0.75em;  }
-h1 a          { text-indent:-9999px;}
-.link         { font-weight: bold;}
-.email        { letter-spacing: -2px;}
-q             { font-style: italic;}
-#content p    { font-size: 1.05em; text-indent: 0.75em; text-align: left; line-height: 1.45em;}
-#title        { font-size: 2.7em; line-height: 1em; text-align: left;}
-.download     { font-size: 1.2em; }
-#subtitle     { font-size: 0.75em; }
-#subtitle em  { font-size: 1.3em;}
-ul li         { font-size: 0.8em; } 
-.prev         { text-align: left;}
-.next         { text-align: right;}
-.download     { letter-spacing: -1px; font-weight: bold;}
-#subtitle     { text-align: left;}
+body                {text-align: center;}
+h2, h3, p, .prev    {text-align: left;}
+.next               {text-align: right;}
+
+h2                  {font-size: 2.7em; line-height: 1em;}
+.header, .download  {font-size: 1.2em;}
+h3, .desc           {font-size: 0.75em;}
+h3 em               {font-size: 1.3em;}
+p                   {font-size: 1.05em; line-height: 1.45em; text-indent: 0.75em;}
+ul li               {font-size: 0.8em;}
+#footer_box         {font-size: 0.7em; line-height: 2em;}
+
+h3, em                      {font-weight: normal;}
+.header, .more, .download   {font-weight: bold;}
+q                           {font-style: italic;} 
+em                          {font-style: normal; font-variant: small-caps; letter-spacing: 0px;}
+.email                      {letter-spacing: -2px;}
+.download                   {letter-spacing: -1px;}
+ol li a                     {text-decoration: none;}
  
+/* HEADER IMAGE REPLACEMENT */ 
+h1 a                    {text-indent: -9999px; overflow:hidden;}
+h1 a                    {background:url(../images/bg_h1.gif) top left no-repeat}
+h1 a:hover, h1 a:focus  {background-position: bottom left;}
+
 /* COLORS AND BACKGROUNDS */
-body                    { color: #232; background:#fff;}
-h1 a                    { background:url(../images/bg_h1.gif) top left no-repeat }
-h1, a:hover, a.download:hover             { background-color: #fff373;}
-#footer_box             { background-color: #f0f5f0;}
-.proj                   { color: #111;}
-.desc                   { color: #232;}
-.on                     { color: #007700;}
-.off                    { color: #770000;}
-strong                  { color: #435143;}
-a, .link                { color: #1f43f3; }
-a:visited               { color: #2f53d3; }
-a img                   { border-color: #3f43f3;}
-a:hover, a:hover .link  { color: #e01343;}
-a:hover img             { border-color: #e01343;}
-ol li em                { color: #999;}
-.download               { background-color: #f0f5f0;}
+body                    {background-color: #fff;}
+#footer_box, a.download {background-color: #f0f5f0;}
+h1, a:hover, a.download:hover, a:focus, a.download:focus {background-color: #fff373;}
+
+body, .desc             {color: #232;}
+strong                  {color: #435143;}
+.header                 {color: #111;}
+.on                     {color: #070;}
+.off                    {color: #700;}
+a, .more                {color: #1f43f3;}
+a:visited               {color: #2f53d3;}
+a img                   {border-color: #3f43f3;}
+a:hover, a:hover .more  {color: #e01343;}
+a:hover img             {border-color: #e01343;}
+ol li em                {color: #999;}
 
 /* LAYOUT */
-body, h1 a, ol                { margin: 0 auto 0 auto;}
-h1, #welcome, #footer_box     { margin: 15px auto 10px auto;}
-#footer_box                   { margin: 15px auto 5px auto;}
-h1                            { width:100%;  height:75px; clear: both; padding: 5px 0 3px 0;}
-h1 a                          { width:288px; height:75px; display:block; overflow:hidden;}
-#footer_box                   { width: 100%; clear: both; margin-bottom: 5px;} 
-em                            { margin-bottom: 5px;}
-.proj, .desc                  { display: block; }
+body, h1 a, h3, ol, ul, #footer_box, #content {margin-left: auto; margin-right: auto;}
+h1, #footer_box {margin-top: 15px; margin-bottom: 10px;}
+em              {margin-bottom: 5px;}
+p               {padding: 3px 0px 3px 0;}
 
-/* LIST */
-ol          { width: 960px; }
-ol li       { width: 270px; float:left; border: 1px dashed #f9f9f9; padding: 13px 24px 13px 24px; min-height: 240px;}
-ol li a     { width: 270px; display: block; text-decoration: none;}
-ol li img   { width: 250px; height: 130px; border:3px solid; margin: 0px 7px 5px 7px;}
-ol li.left  { clear: left;}
-ol li.right { clear: right;}
-ol li em    { display: block;}
+h1              {width: 100%;  height:85px; clear: both;}
+h1 a            {width: 300px; height:85px; display:block;}
+#footer_box     {width: 100%; clear: both;} 
+.header, .desc  {display: block;}
 
-ul          {width: 798px; margin: 0px auto 0px auto;}
-ul li       {width: 266px; float:left; margin: 30px 0 30px 0; }
+/* HOME PAGE */
+ol              {width: 960px;}
+ol li           {width: 270px; float:left; border: 1px dashed #f9f9f9; padding: 13px 24px 13px 24px; min-height: 240px;}
+ol li a         {width: 270px; display: block;}
+ol li img       {width: 250px; height: 130px; border:3px solid; margin: 0px 7px 5px 7px;}
+ol li.left      {clear: left;}
+ol li.right     {clear: right;}
+ol li em        {display: block;}
 
-/* OTHER PAGES */
+/* POST PAGES */
+h2              {width: 75%; clear: left; float: left; padding: 15px 0 5px 0;}
+.download       {width: 25%; clear: right; float: right; margin-top: 0.8em; padding: 7px 0px 7px 0px;}
+h3              {clear: both; margin-bottom: 30px;}
+#content        {width: 800px;}
+#content img    {width: 798px; height: 268px; clear: both; float: left; border: 1px dashed #f9f9f9; margin: 10px 0 10px 0;}
 
-#content     {width: 800px; margin: 0 auto 0 auto; }
-#content p   {padding: 3px 0px 3px 0;}
-#content img {border: 1px dashed #f9f9f9; clear: both; float: left; width: 798px; height: 268px; margin: 10px 0 10px 0;}
-#title       {clear: left; float: left; width: 75%; padding: 15px 0 5px 0; margin: 0; }
-.download    {clear: right; float: right; width: 25%; margin-top: 0.8em; padding: 7px 0px 7px 0px;}
-#subtitle    {clear: both; margin: 0px auto 30px auto;}
+/* NEXT/PREV */
+ul              {width: 798px;}
+ul li           {width: 266px; float:left; margin: 30px 0 30px 0;}

@@ -7,10 +7,10 @@ name: Coding projects
 {% for post in site.posts reversed %}
     {% cycle '<li class="left">', '<li>', '<li class="right">' %}
     <a href="{{ post.url }}/" title="More on {{ post.name }} {{ post.period }}">
-  	<span class="proj">{{ post.name }}</span>
+  	<span class="header">{{ post.name | replace:'/','<span>/</span>'}}</span>
   	<em>{{ post.language | downcase }}</em>
   	<img src="/images/{{post.title|downcase}}_home.png" alt="Project screenshot" />
-  	<span class="desc">{{post.desc}} (<span class="link">more&hellip;</span>)
+  	<span class="desc">{{post.desc}} (<span class="more">more&hellip;</span>)
   	</span>
     </a>
   </li>
