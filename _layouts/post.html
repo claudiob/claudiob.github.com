@@ -3,6 +3,8 @@ layout: default
 ---
 {% if page.action == 'browse' %}
 {%  assign link = 'Browse the code' %}
+{% elsif page.action == 'read' %}
+{%  assign link = 'Read the thesis' %}
 {% else %}
 {%  assign link = 'Visit the page' %}
 {% endif %}
