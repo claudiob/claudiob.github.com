@@ -45,37 +45,42 @@ h1 a:hover, h1 a:focus  {background-position: bottom left;}
 
 /* COLORS AND BACKGROUNDS */
 body                    {background-color: #fff;}
-#footer_box, a.download {background-color: #f0f5f0;}
-h1, a:hover, a.download:hover, a:focus, a.download:focus {background-color: #fff373;}
+#footer_box, a.download {background-color: #f0ffe0;}
+h1, a:hover, a.download:hover, a:focus, a.download:focus {background-color: #9fd803;}
 
 body, .desc             {color: #232;}
-strong                  {color: #435143;}
+strong                  {color: #333133;}
 .header                 {color: #111;}
 .on                     {color: #070;}
 .off                    {color: #700;}
-a, .more                {color: #1f43f3;}
+a, .more                {color: #9fd803;}
 a:visited               {color: #2f53d3;}
 a img                   {border-color: #3f43f3;}
-a:hover, a:hover .more  {color: #e01343;}
-a:hover img             {border-color: #e01343;}
-ol li em                {color: #999;}
+a:hover, a:hover .more  {color: #2f53d3;}
+a:hover img             {border-color: #2f53d3;}
+ol li em                {color: #866;}
 
 /* LAYOUT */
 body, h1 a, h3, ol, ul, #footer_box, #content {margin-left: auto; margin-right: auto;}
 h1, #footer_box {margin-top: 15px; margin-bottom: 10px;}
 em              {margin-bottom: 5px;}
 p               {padding: 3px 0px 3px 0;}
+.menu li a      {padding: 3px;}
 
 h1              {width: 100%;  height:85px; clear: both;}
 h1 a            {width: 300px; height:85px; display:block;}
 #footer_box     {width: 100%; clear: both;} 
 .header, .desc  {display: block;}
 
+ol a, p a {padding: 3px;}
+p a                     {color: #2f53d3;}
+p a:visited             {color: #2f5373;}
+
 /* HOME PAGE */
 ol              {width: 960px;}
-ol li           {width: 270px; float:left; border: 1px dashed #f9f9f9; padding: 13px 24px 13px 24px; min-height: 240px;}
-ol li a         {width: 270px; display: block;}
-ol li img       {width: 250px; height: 130px; border:3px solid; margin: 0px 7px 5px 7px;}
+ol li           {width: 280px; float:left; border: 1px dashed #f9f9f9; padding: 13px 19px 13px 19px; min-height: 240px;}
+ol li a         {width: 270px; padding: 4px; border: 1px solid #fff; display: block;}
+ol li img       {width: 250px; height: 130px; border:2px solid; margin: 0px 8px 5px 8px;}
 ol li.left      {clear: left;}
 ol li.right     {clear: right;}
 ol li em        {display: block;}
