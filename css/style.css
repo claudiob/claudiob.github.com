@@ -73,7 +73,7 @@ h1 a            {width: 300px; height:85px; display:block;}
 .header, .desc  {display: block;}
 
 ol a, p a {padding: 3px;}
-p a                     {color: #2f53d3;}
+p a, .menu li a         {color: #2f53d3;}
 p a:visited             {color: #2f5373;}
 
 /* HOME PAGE */
