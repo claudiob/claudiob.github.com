@@ -1,34 +1,144 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-
-<title>Claudio Baccigalupo &sect; {{ page.name }}</title>
-
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<meta http-equiv="Content-Language" content="en" />
-<meta name="language" content="en" />
-<meta name="robots" content="all" />
-<meta http-equiv="imagetoolbar" content="false" />
-
-<meta name="author" content="claudiob@gmail.com" />
-<meta name="Copyright" content="Claudio Baccigalupo" />
-<meta name="Version" content="3.0" />
-
-<meta name="description" content="Claudio Baccigalupo's GitHub home-page" />
-<meta name="keywords" content="recommender systems, music, AI, coder, CBR, portfolio, CV, curriculum, work" />
-<meta name="viewport" content="width=960" />
-<link href="/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+  <meta charset="utf-8">
+  <title>Claudio B &mdash; Coding Projects</title>
+  <meta name="description" content="Claudio Baccigalupo's GitHub home-page">
+  <meta name="author" content="Claudio Baccigalupo">
+  <meta name="version" content="4.0">
+  <meta name="keywords" content="recommender systems, music, AI, coder, CBR, portfolio, CV, curriculum, work">
+  <meta name="viewport" content="width=960">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    body {margin: 0; font-family: "Helvetica Neue"; font-size: 0.9em; line-height: 1.3em; } 
+    content {height: 400px; overflow-y: scroll; padding: 10px; float: left; width: 400px; text-align: justify; font-weight: 300;}
+    .boxofficescript {background-color: #f9f; color: #030; }
+    .boxofficeconsulting {background-color: #9f9; color: #303; }
+    .boxofficees {background-color: #ff9; color: #003; }
+    .boxofficedata {background-color: #99f; color: #330; }
+    .neverfails {background-color: #9ff; color: #300; }
+    .ff0000blog {background-color: #f99; color: #033; }
+    .boxofficescript h2 {background-color: #faf;}
+    .boxofficeconsulting h2 {background-color: #afa;}
+    h1, h2, p {display: inlines; font-size: 1em; }
+    h2 {display: inline; margin-right: 1em;}
+    h2 {font-weight: normal; font-style: italic; }
+  </style>
 </head>
+ 
 <body>
-<h1><a href="/" rel="start" title="Home Page (accesskey 0)" accesskey="0">Claudio Baccigalupo</a></h1>
-    
-{{ content }}
-  
-<div id="footer_box">
-    Last updated on August 13, 2010 &middot;
-    <q>Nothing short of everything will really do</q> &middot;
-    Contact me at <span class="email"> c l a u d i o b @ g m a i l  . c o m</span>
-</div>
+  <content class="boxofficescript">
+    <h1>Boxoffice Script</h1>
+    <p><h2><abbr title="Uniform Resource Locator">URL</abbr>:</h2><a href="http://boxofficescript.com">http://boxofficescript.com</a> (live preview)</p>
+    <p><h2>Goal:</h2>An effective one-page website</p>
+    <p><h2>Details:</h2>My husband is launching an agency that collects original movie scripts from emergent screenwriters, analyzes their viability and offers them to the most appropriate Spanish movie producers. He needs a website that will attract young screenwriters, explain them the agency process and legal terms, and convince them to submit their script.</p>
+    <p><h2>Technologies:</h2>HTML, Javascript</p>
+    <p><h2>Motivation:</h2>Helping my husband's business and experimenting with Javascript</p>
+    <p><h2>Inspiration:</h2>A one-page site seems a good idea, hence I look at 37signals home-page. Smartly, they organize their message in bullet points, so I apply the same approach, which works greatly on the web.</p>
+    <p><h2>Graphic design:</h2>As the page takes form, I realize Boxoffice Script needs a logo. Instead of wasting time doing one by myself, I browse some designers' portfolios and hire one of my co-workers. I provide him with a few specifications, and let his creativity work. The basic requirement is that the logo should work both horizontally (spelling out the entire "Boxoffice Script") and bounded within a square (for Twitter icon, Facebook icon, favorites icon). After a couple of weeks he comes back with five draft proposals, I pick one, ask him to refine some proportions and vector shapes, and boom! we have a great logo.</p>
+    <p><h2>Social awareness:</h2>I develop the site in about a week, but need to wait a month for the lawyer to provide us with legal conditions and contracts. Rather than publishing a 1990-style "Work in progress" banner, I generate expectation in the audience by temporarily showing a blank page with the logo and a form to be contacted once the site launches. I also set up Twitter and Facebook accounts to spread the buzz.</p>
+    <p><h2>Front-end:</h2>Even a web page with a logo and a form can be made more usable with some front-end expedients. The form has two required fields: name and e-mail. By default, they are underlined in red, which turns to green once the content is valid. Also, the "Submit" button remains disabled until both fields are valid. These tricks and the nicely written labels "my name is ... and my e-mail is ..." make error messages redundant and the page slimmer. Form submission is managed through AJAX, so there is no page reloading and the whole experience is more straightforward. Given the small amount of Javascript code needed, I write it myself, instead of using frameworks that would make page loading slower. The entire site also works with Javascript disabled. The Facebook and Twitter social plugins are loaded only after the page has completely loaded, so the page speed score is not affected. As usual, I make sure the entire code validates.</p>
+    <p><h2>Results:</h2>After 3 days, the site has 80 followers in Twitter and 80 "likes" in Facebook. With this number, I can also set up the proper Facebook page name facebook.com/boxofficescript.</p>
+   <p><h2>Lessons learnt:</h2>1) creating expectation in the audience is a good practice, and grants some time to test the page with real users and a small content</p>
+    <p>2) hiring a graphic designer is worth the price; the logo has a great impact on the page that I would not have been able to create by myself.</p>
+  </content>
+  <content class="boxofficeconsulting">
+    <h1>Boxoffice Script</h1>
+    <p><h2><abbr title="Uniform Resource Locator">URL</abbr>:</h2><a href="http://boxofficescript.com">http://boxofficescript.com</a> (live preview)</p>
+    <h2>Goal:</h2>
+    <p>An effective one-page website</p>
+    <h2>Details:</h2>
+    <p>My husband is launching an agency that collects original movie scripts from emergent screenwriters, analyzes their viability and offers them to the most appropriate Spanish movie producers. He needs a website that will attract young screenwriters, explain them the agency process and legal terms, and convince them to submit their script.</p>
+    <h2>Technologies:</h2>
+    <p>HTML, Javascript</p>
+    <h2>Motivation:</h2>
+    <p>Helping my husband's business and experimenting with Javascript</p>
+    <h2>Inspiration:</h2>
+    <p>A one-page site seems a good idea, hence I look at 37signals home-page. Smartly, they organize their message in bullet points, so I apply the same approach, which works greatly on the web.</p>
+    <h2>Graphic design:</h2>
+    <p>As the page takes form, I realize Boxoffice Script needs a logo. Instead of wasting time doing one by myself, I browse some designers' portfolios and hire one of my co-workers. I provide him with a few specifications, and let his creativity work. The basic requirement is that the logo should work both horizontally (spelling out the entire "Boxoffice Script") and bounded within a square (for Twitter icon, Facebook icon, favorites icon). After a couple of weeks he comes back with five draft proposals, I pick one, ask him to refine some proportions and vector shapes, and boom! we have a great logo.</p>
+    <h2>Social awareness:</h2>
+    <p>I develop the site in about a week, but need to wait a month for the lawyer to provide us with legal conditions and contracts. Rather than publishing a 1990-style "Work in progress" banner, I generate expectation in the audience by temporarily showing a blank page with the logo and a form to be contacted once the site launches. I also set up Twitter and Facebook accounts to spread the buzz.</p>
+    <h2>Front-end:</h2>
+    <p>Even a web page with a logo and a form can be made more usable with some front-end expedients. The form has two required fields: name and e-mail. By default, they are underlined in red, which turns to green once the content is valid. Also, the "Submit" button remains disabled until both fields are valid. These tricks and the nicely written labels "my name is ... and my e-mail is ..." make error messages redundant and the page slimmer. Form submission is managed through AJAX, so there is no page reloading and the whole experience is more straightforward. Given the small amount of Javascript code needed, I write it myself, instead of using frameworks that would make page loading slower. The entire site also works with Javascript disabled. The Facebook and Twitter social plugins are loaded only after the page has completely loaded, so the page speed score is not affected. As usual, I make sure the entire code validates.</p>
+    <h2>Results:</h2>
+    <p>After 3 days, the site has 80 followers in Twitter and 80 "likes" in Facebook. With this number, I can also set up the proper Facebook page name facebook.com/boxofficescript.</p>
+    <h2>Lessons learnt:</h2>
+   <p>1) creating expectation in the audience is a good practice, and grants some time to test the page with real users and a small content</p>
+    <p>2) hiring a graphic designer is worth the price; the logo has a great impact on the page that I would not have been able to create by myself.</p>
+  </content>
+  <content class="boxofficees">
+    <h1>Boxoffice Script</h1>
+    <p><h2><abbr title="Uniform Resource Locator">URL</abbr>:</h2><a href="http://boxofficescript.com">http://boxofficescript.com</a> (live preview)</p>
+    <p><h2>Goal:</h2>An effective one-page website</p>
+    <p><h2>Details:</h2>My husband is launching an agency that collects original movie scripts from emergent screenwriters, analyzes their viability and offers them to the most appropriate Spanish movie producers. He needs a website that will attract young screenwriters, explain them the agency process and legal terms, and convince them to submit their script.</p>
+    <p><h2>Technologies:</h2>HTML, Javascript</p>
+    <p><h2>Motivation:</h2>Helping my husband's business and experimenting with Javascript</p>
+    <p><h2>Inspiration:</h2>A one-page site seems a good idea, hence I look at 37signals home-page. Smartly, they organize their message in bullet points, so I apply the same approach, which works greatly on the web.</p>
+    <p><h2>Graphic design:</h2>As the page takes form, I realize Boxoffice Script needs a logo. Instead of wasting time doing one by myself, I browse some designers' portfolios and hire one of my co-workers. I provide him with a few specifications, and let his creativity work. The basic requirement is that the logo should work both horizontally (spelling out the entire "Boxoffice Script") and bounded within a square (for Twitter icon, Facebook icon, favorites icon). After a couple of weeks he comes back with five draft proposals, I pick one, ask him to refine some proportions and vector shapes, and boom! we have a great logo.</p>
+    <p><h2>Social awareness:</h2>I develop the site in about a week, but need to wait a month for the lawyer to provide us with legal conditions and contracts. Rather than publishing a 1990-style "Work in progress" banner, I generate expectation in the audience by temporarily showing a blank page with the logo and a form to be contacted once the site launches. I also set up Twitter and Facebook accounts to spread the buzz.</p>
+    <p><h2>Front-end:</h2>Even a web page with a logo and a form can be made more usable with some front-end expedients. The form has two required fields: name and e-mail. By default, they are underlined in red, which turns to green once the content is valid. Also, the "Submit" button remains disabled until both fields are valid. These tricks and the nicely written labels "my name is ... and my e-mail is ..." make error messages redundant and the page slimmer. Form submission is managed through AJAX, so there is no page reloading and the whole experience is more straightforward. Given the small amount of Javascript code needed, I write it myself, instead of using frameworks that would make page loading slower. The entire site also works with Javascript disabled. The Facebook and Twitter social plugins are loaded only after the page has completely loaded, so the page speed score is not affected. As usual, I make sure the entire code validates.</p>
+    <p><h2>Results:</h2>After 3 days, the site has 80 followers in Twitter and 80 "likes" in Facebook. With this number, I can also set up the proper Facebook page name facebook.com/boxofficescript.</p>
+   <p><h2>Lessons learnt:</h2>1) creating expectation in the audience is a good practice, and grants some time to test the page with real users and a small content</p>
+    <p>2) hiring a graphic designer is worth the price; the logo has a great impact on the page that I would not have been able to create by myself.</p>
+  </content>
+  <content class="boxofficedata">
+    <h1>Boxoffice Script</h1>
+    <p><h2><abbr title="Uniform Resource Locator">URL</abbr>:</h2><a href="http://boxofficescript.com">http://boxofficescript.com</a> (live preview)</p>
+    <p><h2>Goal:</h2>An effective one-page website</p>
+    <p><h2>Details:</h2>My husband is launching an agency that collects original movie scripts from emergent screenwriters, analyzes their viability and offers them to the most appropriate Spanish movie producers. He needs a website that will attract young screenwriters, explain them the agency process and legal terms, and convince them to submit their script.</p>
+    <p><h2>Technologies:</h2>HTML, Javascript</p>
+    <p><h2>Motivation:</h2>Helping my husband's business and experimenting with Javascript</p>
+    <p><h2>Inspiration:</h2>A one-page site seems a good idea, hence I look at 37signals home-page. Smartly, they organize their message in bullet points, so I apply the same approach, which works greatly on the web.</p>
+    <p><h2>Graphic design:</h2>As the page takes form, I realize Boxoffice Script needs a logo. Instead of wasting time doing one by myself, I browse some designers' portfolios and hire one of my co-workers. I provide him with a few specifications, and let his creativity work. The basic requirement is that the logo should work both horizontally (spelling out the entire "Boxoffice Script") and bounded within a square (for Twitter icon, Facebook icon, favorites icon). After a couple of weeks he comes back with five draft proposals, I pick one, ask him to refine some proportions and vector shapes, and boom! we have a great logo.</p>
+    <p><h2>Social awareness:</h2>I develop the site in about a week, but need to wait a month for the lawyer to provide us with legal conditions and contracts. Rather than publishing a 1990-style "Work in progress" banner, I generate expectation in the audience by temporarily showing a blank page with the logo and a form to be contacted once the site launches. I also set up Twitter and Facebook accounts to spread the buzz.</p>
+    <p><h2>Front-end:</h2>Even a web page with a logo and a form can be made more usable with some front-end expedients. The form has two required fields: name and e-mail. By default, they are underlined in red, which turns to green once the content is valid. Also, the "Submit" button remains disabled until both fields are valid. These tricks and the nicely written labels "my name is ... and my e-mail is ..." make error messages redundant and the page slimmer. Form submission is managed through AJAX, so there is no page reloading and the whole experience is more straightforward. Given the small amount of Javascript code needed, I write it myself, instead of using frameworks that would make page loading slower. The entire site also works with Javascript disabled. The Facebook and Twitter social plugins are loaded only after the page has completely loaded, so the page speed score is not affected. As usual, I make sure the entire code validates.</p>
+    <p><h2>Results:</h2>After 3 days, the site has 80 followers in Twitter and 80 "likes" in Facebook. With this number, I can also set up the proper Facebook page name facebook.com/boxofficescript.</p>
+   <p><h2>Lessons learnt:</h2>1) creating expectation in the audience is a good practice, and grants some time to test the page with real users and a small content</p>
+    <p>2) hiring a graphic designer is worth the price; the logo has a great impact on the page that I would not have been able to create by myself.</p>
+  </content>
+  <content class="neverfails">
+    <h1>Boxoffice Script</h1>
+    <p><h2><abbr title="Uniform Resource Locator">URL</abbr>:</h2><a href="http://boxofficescript.com">http://boxofficescript.com</a> (live preview)</p>
+    <h2>Goal:</h2>
+    <p>An effective one-page website</p>
+    <h2>Details:</h2>
+    <p>My husband is launching an agency that collects original movie scripts from emergent screenwriters, analyzes their viability and offers them to the most appropriate Spanish movie producers. He needs a website that will attract young screenwriters, explain them the agency process and legal terms, and convince them to submit their script.</p>
+    <h2>Technologies:</h2>
+    <p>HTML, Javascript</p>
+    <h2>Motivation:</h2>
+    <p>Helping my husband's business and experimenting with Javascript</p>
+    <h2>Inspiration:</h2>
+    <p>A one-page site seems a good idea, hence I look at 37signals home-page. Smartly, they organize their message in bullet points, so I apply the same approach, which works greatly on the web.</p>
+    <h2>Graphic design:</h2>
+    <p>As the page takes form, I realize Boxoffice Script needs a logo. Instead of wasting time doing one by myself, I browse some designers' portfolios and hire one of my co-workers. I provide him with a few specifications, and let his creativity work. The basic requirement is that the logo should work both horizontally (spelling out the entire "Boxoffice Script") and bounded within a square (for Twitter icon, Facebook icon, favorites icon). After a couple of weeks he comes back with five draft proposals, I pick one, ask him to refine some proportions and vector shapes, and boom! we have a great logo.</p>
+    <h2>Social awareness:</h2>
+    <p>I develop the site in about a week, but need to wait a month for the lawyer to provide us with legal conditions and contracts. Rather than publishing a 1990-style "Work in progress" banner, I generate expectation in the audience by temporarily showing a blank page with the logo and a form to be contacted once the site launches. I also set up Twitter and Facebook accounts to spread the buzz.</p>
+    <h2>Front-end:</h2>
+    <p>Even a web page with a logo and a form can be made more usable with some front-end expedients. The form has two required fields: name and e-mail. By default, they are underlined in red, which turns to green once the content is valid. Also, the "Submit" button remains disabled until both fields are valid. These tricks and the nicely written labels "my name is ... and my e-mail is ..." make error messages redundant and the page slimmer. Form submission is managed through AJAX, so there is no page reloading and the whole experience is more straightforward. Given the small amount of Javascript code needed, I write it myself, instead of using frameworks that would make page loading slower. The entire site also works with Javascript disabled. The Facebook and Twitter social plugins are loaded only after the page has completely loaded, so the page speed score is not affected. As usual, I make sure the entire code validates.</p>
+    <h2>Results:</h2>
+    <p>After 3 days, the site has 80 followers in Twitter and 80 "likes" in Facebook. With this number, I can also set up the proper Facebook page name facebook.com/boxofficescript.</p>
+    <h2>Lessons learnt:</h2>
+   <p>1) creating expectation in the audience is a good practice, and grants some time to test the page with real users and a small content</p>
+    <p>2) hiring a graphic designer is worth the price; the logo has a great impact on the page that I would not have been able to create by myself.</p>
+  </content>
+  <content class="ff0000blog">
+    <h1>Boxoffice Script</h1>
+    <p><h2><abbr title="Uniform Resource Locator">URL</abbr>:</h2><a href="http://boxofficescript.com">http://boxofficescript.com</a> (live preview)</p>
+    <p><h2>Goal:</h2>An effective one-page website</p>
+    <p><h2>Details:</h2>My husband is launching an agency that collects original movie scripts from emergent screenwriters, analyzes their viability and offers them to the most appropriate Spanish movie producers. He needs a website that will attract young screenwriters, explain them the agency process and legal terms, and convince them to submit their script.</p>
+    <p><h2>Technologies:</h2>HTML, Javascript</p>
+    <p><h2>Motivation:</h2>Helping my husband's business and experimenting with Javascript</p>
+    <p><h2>Inspiration:</h2>A one-page site seems a good idea, hence I look at 37signals home-page. Smartly, they organize their message in bullet points, so I apply the same approach, which works greatly on the web.</p>
+    <p><h2>Graphic design:</h2>As the page takes form, I realize Boxoffice Script needs a logo. Instead of wasting time doing one by myself, I browse some designers' portfolios and hire one of my co-workers. I provide him with a few specifications, and let his creativity work. The basic requirement is that the logo should work both horizontally (spelling out the entire "Boxoffice Script") and bounded within a square (for Twitter icon, Facebook icon, favorites icon). After a couple of weeks he comes back with five draft proposals, I pick one, ask him to refine some proportions and vector shapes, and boom! we have a great logo.</p>
+    <p><h2>Social awareness:</h2>I develop the site in about a week, but need to wait a month for the lawyer to provide us with legal conditions and contracts. Rather than publishing a 1990-style "Work in progress" banner, I generate expectation in the audience by temporarily showing a blank page with the logo and a form to be contacted once the site launches. I also set up Twitter and Facebook accounts to spread the buzz.</p>
+    <p><h2>Front-end:</h2>Even a web page with a logo and a form can be made more usable with some front-end expedients. The form has two required fields: name and e-mail. By default, they are underlined in red, which turns to green once the content is valid. Also, the "Submit" button remains disabled until both fields are valid. These tricks and the nicely written labels "my name is ... and my e-mail is ..." make error messages redundant and the page slimmer. Form submission is managed through AJAX, so there is no page reloading and the whole experience is more straightforward. Given the small amount of Javascript code needed, I write it myself, instead of using frameworks that would make page loading slower. The entire site also works with Javascript disabled. The Facebook and Twitter social plugins are loaded only after the page has completely loaded, so the page speed score is not affected. As usual, I make sure the entire code validates.</p>
+    <p><h2>Results:</h2>After 3 days, the site has 80 followers in Twitter and 80 "likes" in Facebook. With this number, I can also set up the proper Facebook page name facebook.com/boxofficescript.</p>
+   <p><h2>Lessons learnt:</h2>1) creating expectation in the audience is a good practice, and grants some time to test the page with real users and a small content</p>
+    <p>2) hiring a graphic designer is worth the price; the logo has a great impact on the page that I would not have been able to create by myself.</p>
+  </content>
 
-</body></html>
+</body>
+</html>

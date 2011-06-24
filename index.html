@@ -3,9 +3,11 @@ layout: default
 name: Coding projects
 ---
 
-<ol class="listProjects">
 {% for post in site.posts reversed %}
-    {% cycle '<li class="left">', '<li>', '<li class="right">' %}
+  <content class="{{ post.class }}">
+    <header>
+      <h1>{{ post.name }}</h1>
+    </header>
     <a href="{{ post.url }}/" title="More on {{ post.name }} {{ post.period }}">
   	<span class="header">{{ post.name | replace:'/','<span>/</span>'}}</span>
   	<em>{{ post.language | downcase }}</em>
@@ -14,7 +16,7 @@ name: Coding projects
   	</span>
     </a>
   </li>
+  <content>
 {% endfor %}
-</ol>
 
   
