@@ -1,20 +1,41 @@
----
-layout: default
-name: Coding projects
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas Paint - Example 1</title>
+    <link href='http://fonts.googleapis.com/css?family=GFS+Neohellenic' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+      body {padding-top: 0.75em; }
+      #imageView { position: absolute; top: 0; left: 0; /*cursor: crosshair;*/}
+      #text { position: relative;  width: 600px; font-family: 'GFS Neohellenic', arial, serif; font-size: 1.3em; line-height: 1em; margin: 0 auto; text-align: center; color: #433;}
+      p {margin: 0; padding-bottom: 0.75em; }
+      strong {font-weight: normal; color: #001;}
+    </style>
 
-<ol class="listProjects">
-{% for post in site.posts reversed %}
-    {% cycle '<li class="left">', '<li>', '<li class="right">' %}
-    <a href="{{ post.url }}/" title="More on {{ post.name }} {{ post.period }}">
-  	<span class="header">{{ post.name | replace:'/','<span>/</span>'}}</span>
-  	<em>{{ post.language | downcase }}</em>
-  	<img src="/images/{{post.title|downcase}}_home.png" alt="Project screenshot" />
-  	<span class="desc">{{post.desc}} (<span class="more">more&hellip;</span>)
-  	</span>
-    </a>
-  </li>
-{% endfor %}
-</ol>
+  </head>
+  <body>
+    <div id="text">
+      <!-- TODO: once it's scraped, each strong becomes a link in the canvas -->
+      <!-- TODO: use multiple random colored scratches, to give the impression one's really painting -->
+      <canvas id="textView" width="600" height="500">
+            <p>I could tell you one hundred stories from my last 31 years. 
+        </p><p>I could recall my passion for <strong>cyberpunk</strong>, my disappointment for virtual reality, and how I envision a machine to help humans be more <strong>creative</strong>. 
+        </p><p>I could explain how I feed both my rational and my emotional self, by means of <strong>coding</strong>, writing, speaking, presenting, loving and playing music. 
+        </p><p>I could express my beliefs over <strong>artificial intelligence</strong>, gay marriage, the role of <strong>bass</strong> guitar, <strong>typography</strong>, the color green and start-up companies. 
+        </p><p>I could enumerate the <strong>languages</strong> that fit my mind, and those that do not. 
+        </p><p>I could talk about my passion for the <strong>underground railways</strong>.
+        </p><p>I could show you pictures of my rainbow <strong>hairstyles</strong>. 
+        </p><p>I could explain the content of my <strong>Ph.D. thesis</strong>. 
+        </p><p>I could overcome you with my <strong>music</strong> obsession. 
+        </p><p>I could give you doubts, I could challenge you. 
+        </p><p>And then, we should <strong>work</strong> together.
+        </p><p><a href="">Contact me</a>
+        </p>
+      </canvas>
+      <canvas id="imageView" width="600" height="500">
+      </canvas>
+    </div>
 
-  
+    <script type="text/javascript" src="js/canvas.js"></script>
+  </body>
+</html>
