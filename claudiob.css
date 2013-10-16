@@ -1,0 +1,96 @@
+/* TYPOGRAPHY */
+body                                  {font-family: Helvetica, Arial, sans-serif}
+.commits a                            {font-family: "Andale Mono", Courier, monospace}
+body                                  {font-size: 0.85em}
+h1, h2                                {font-size: 1.50em}
+p                                     {font-size: 0.95em}
+h3, .commits                          {font-size: 0.85em}
+body                                  {line-height: 1.5em}
+h1                                    {font-weight: 100}
+a                                     {text-decoration: none}
+a:hover, a:focus                      {text-decoration: underline}
+
+/* COLORS */
+body, h1,
+nav li.current                        {background-color: #fff}
+body                                  {color: #565656}
+a                                     {color: #4183c4}
+article a:visited                     {color: #81a3c4}
+h3, time, h3 a, h3 a:visited          {color: #888}
+a:focus, a:hover, article a:focus,
+article a:hover                       {color: #3173c4}
+.octicon.mega                         {color: #bbb}
+li, header, nav, aside ul, article ul {border-color: #ddd}
+
+/* WIDTHS */
+body                                  {width: 960px}
+header, aside                         {width: 221px}
+article, nav                          {width: 721px}
+aside img, header img                 {width: 36px}
+h2, h3, ul, li, p                     {margin: 0; padding: 0}
+body                                  {margin-left: auto}
+body                                  {margin-right: auto}
+header, aside, h3 .octicon, time      {margin-left: 9px}
+article, nav, time, h1 img,
+aside img                             {margin-right: 9px}
+h1                                    {padding-left: 9px}
+h1, .octicon                          {padding-right: 9px}
+h1                                    {margin-left: 18px}
+h1                                    {margin-right: 18px}
+nav li, article>ul                    {padding-left: 18px}
+nav li, .octicon.mega                 {padding-right: 18px}
+nav li.current                        {padding-left: 17px; border-left-width: 1px}
+nav li.current                        {padding-right: 17px; border-right-width: 1px}
+
+
+/* HEIGHTS */
+header, header img, nav, aside img    {height: 36px}
+.commits                              {margin-top: 9px}
+aside img                             {margin-bottom: 9px}
+body, h1, aside li                    {margin-top: 18px}
+body, aside li, article>ul>li, h4     {margin-bottom: 18px}
+article>ul>li                         {padding-bottom: 18px}
+nav                                   {margin-bottom: 36px}
+nav li, .follow                       {line-height: 36px}
+header, nav, aside ul, article>ul>li  {border-bottom-width: 1px}
+nav li.current                        {border-top-width: 1px}
+
+/* LAYOUT */
+header, nav, article,
+aside, .octicon.mega                  {float: left}
+.follow, h3                           {float: right}
+header, aside                         {clear: left}
+nav, article                          {clear: right}
+h1, nav ul, nav li                    {display: inline-block}
+h2, h3                                {display: inline}
+h1 img                                {vertical-align: middle}
+
+header, nav, aside ul, article>ul>li  {border-bottom-style: solid}
+nav li.current                        {border-style: solid solid none solid}
+ul                                    {list-style: none}
+
+/* Browser-specific properties */
+h1 img {border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px}
+aside img {-webkit-opacity: 0.7; -moz-opacity: 0.7; filter:alpha(opacity=70); opacity: 0.7;}
+
+/* GitHub octicons */
+@font-face{
+  font-family: 'octicons';
+  src: url("fonts/octicons.eot");
+  src: url("fonts/octicons.eot#iefix") format("embedded-opentype"),
+       url("fonts/octicons.woff") format("woff"),
+       url("fonts/octicons.ttf") format("truetype"),
+       url("fonts/octicons.svg#octicons") format("svg");
+  font-weight:normal;
+  font-style:normal}
+.octicon{font:normal normal 16px octicons;line-height:1;display:inline-block;text-decoration:none;-webkit-font-smoothing:antialiased}
+.octicon.mega{font-size: 32px}
+.octicon.repo:before{content:'\f001'}
+.octicon.repo-forked:before{content:'\f002'}
+.octicon.diff-added:before{content:'\f06b'}
+.octicon.person-follow:before{content:'\f01c'}
+.octicon.link:before{content:'\f05c'}
+.octicon.clock:before{content:'\f046'}
+.octicon.git-commit:before{content:'\f01f'}
+.octicon.git-branch:before{content:'\f020'}
+.octicon.git-star:before{content:'\f02a'}

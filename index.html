@@ -1,20 +1,121 @@
----
-layout: default
-name: Coding projects
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>A summary of my open source projects and contributions</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link href="claudiob.css" media="all" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <header><h1><img src="claudiob.jpg" alt="Claudio B">Claudio B.</h1></header>
+  <nav>
+    <ul>
+      <li class="current">
+        <span class="octicon repo"></span>My open source projects
+      </li>
+      <li>
+        <span class="octicon diff-added"></span><a href="commits.html">My contributions to open source</a>
+      </li>
+    </ul>
+    <a class="follow" href="https://github.com/claudiob"><span class="octicon person-follow"></span>Follow</a>
+  </nav>
+  <aside>
+    <ul>
+      <li><span class="octicon link"></span><a href="https://github.com/claudiob">github.com/claudiob</a></li>
+      <li><span class="octicon clock"></span>Joined on May 12, 2008</li>
+      <li><span class="octicon person-follow"></span>54 GitHub followers</li>
+    </ul>
+    <h4>Coding experience</h4>
+    <div>
+        <img alt="Ruby" title="Ruby" src="logos/ruby.png" />
+        <img alt="Ruby on Rails" title="Ruby on Rails" src="logos/rails.png" />
+        <img alt="HTML" title="HTML" src="logos/html5.png" />
+        <img alt="Javascript" title="Javascript" src="logos/javascript.png" />
+        <img alt="CSS" title="CSS" src="logos/css3.png" />
+        <img alt="Git" title="Git" src="logos/git.png" />
+        <img alt="Bash" title="Bash" src="logos/bash.png" />
+        <img alt="MySQL" title="MySQL" src="logos/mysql.png" />
+        <img alt="Apache" title="Apache" src="logos/apache.png" />
+        <img alt="AWS" title="AWS" src="logos/aws.png" />
+        <img alt="Python" title="Python" src="logos/python.png" />
+        <img alt="Django" title="Django" src="logos/django.png" />
+        <img alt="Wordpress" title="Wordpress" src="logos/wordpress.png" />
+        <img alt="TeX" title="TeX" src="logos/tex.png" />
+        <img alt="Raspberry Pi" title="Raspberry Pi" src="logos/raspberrypi.png" />
+        <img alt="Redis" title="Redis" src="logos/redis.png" />
+        <img alt="MongoDB" title="MongoDB" src="logos/mongodb.png" />
+        <img alt="Lisp" title="Lisp" src="logos/lisp.png" />
+        <img alt="C++" title="C++" src="logos/cplusplus.png" />
+        <img alt="R" title="R" src="logos/r.png" />
+    </div>
+  </aside>
+  <article>
+    <ul>
+      <li>
+        <span class="octicon mega repo"></span>
+        <h2><a href="https://github.com/rspec-api/rspec-api">RSpec API</a></h2>
+        <h3>Ruby<a title="RSpec API stargazers" href="https://github.com/rspec-api/rspec-api/stargazers"><span class="octicon git-star"></span>8</a><a title="RSpec API network" href="https://github.com/rspec-api/rspec-api/network"><span class="octicon git-branch"></span>1</a></h3>
+        <p>When you write a web API, you make a promise to the world. RSpec API helps you keep your promise.</p>
+        <ul class="commits">
+          <li><a href="https://github.com/rspec-api/rspec-api/commit/9687d581e1d71069919021302121a3286e3d12e9">9687d58</a> <time datetime="2013-10-14T14:42:18Z">yesterday</time>Use page and callbacks parameters, not fixed</li>
+          <li><a href="https://github.com/rspec-api/rspec-api/commit/5a3bdf72624bebbeb4801875c379a53d742e7035">5a3bdf7</a> <time datetime="2013-10-14T14:23:18Z">yesterday</time>Support JSONP callbacks</li>
+          <li><a href="https://github.com/rspec-api/rspec-api/commit/dfa6a463a7157a010b1698d9c13674834696fbdc">dfa6a46</a> <time datetime="2013-10-09T13:53:11Z">7 days ago</time>Rename HTTP modules to Local and Remote</li>
+          <li><a href="https://github.com/rspec-api/rspec-api/commits?author=claudiob">&#9657; 68 older commits</a></li>
+        </ul>
+      </li>
 
-<ol class="listProjects">
-{% for post in site.posts reversed %}
-    {% cycle '<li class="left">', '<li>', '<li class="right">' %}
-    <a href="{{ post.url }}/" title="More on {{ post.name }} {{ post.period }}">
-  	<span class="header">{{ post.name | replace:'/','<span>/</span>'}}</span>
-  	<em>{{ post.language | downcase }}</em>
-  	<img src="/images/{{post.title|downcase}}_home.png" alt="Project screenshot" />
-  	<span class="desc">{{post.desc}} (<span class="more">more&hellip;</span>)
-  	</span>
-    </a>
-  </li>
-{% endfor %}
-</ol>
+      <li>
+        <span class="octicon mega repo"></span>
+        <h2><a href="https://github.com/claudiob/bin">dotfiles</a></h2>
+        <h3>Shell<a title="dotfiles stargazers" href="https://github.com/claudiob/bin/stargazers"><span class="octicon git-star"></span>7</a><a title="dotfiles network" href="https://github.com/claudiob/bin/network"><span class="octicon git-branch"></span>5</a></h3>
+        <p>My aliases and shortcuts to type and code faster in the Bash shell environment.</p>
+        <ul class="commits">
+          <li><a href="https://github.com/claudiob/bin/commit/33fc76864e1c7e719149b3069f86182203eef0bb">33fc768</a> <time datetime="2013-10-03T17:45:12Z">last week</time>gua supports gem 2.1.5</li>
+          <li><a href="https://github.com/claudiob/bin/commit/a08277a543ed26c4df8c21d4f8c8ab994d3ec096">a08277a</a> <time datetime="2013-10-03T17:44:17Z">last week</time>Add knife to bundled commands</li>
+          <li><a href="https://github.com/claudiob/bin/commit/a31af1b3a622afda31c74c513f82037ff2a52ef6">a31af1b</a> <time datetime="2013-10-03T17:43:46Z">last week</time>Fix gsh for github shortener</li>
+          <li><a href="https://github.com/claudiob/bin/commits?author=claudiob">&#9657; 70 older commits</a></li>
+        </ul>
+      </li>
 
-  
+      <li>
+        <span class="octicon mega repo"></span>
+        <h2><a href="https://github.com/claudiob/phdthesis">Ph.D. Thesis</a></h2>
+        <h3>R<a title="Ph.D. Thesis stargazers" href="https://github.com/claudiob/phdthesis/stargazers"><span class="octicon git-star"></span>3</a><a title="Ph.D. Thesis network" href="https://github.com/claudiob/phdthesis/network"><span class="octicon git-branch"></span>0</a></h3>
+        <p>LaTeX sources for the <a href="http://www.iiia.csic.es/~claudio" title="IIIA CSIC">Ph.D. thesis in Artificial Intelligence</a> that I wrote and designed.</p>
+        <ul class="commits">
+          <li><a href="https://github.com/claudiob/phdthesis/commit/cc1f34aeacec87224f1deb254ec7213cab3b9c60">cc1f34a</a> <time datetime="2013-09-12T17:39:09Z">last month</time>Better instructions for OS X install</li>
+          <li><a href="https://github.com/claudiob/phdthesis/commit/6b859b8595a941008d7ffa1dd5f49dd7f2a1891f">6b859b8</a> <time datetime="2013-09-12T17:39:01Z">last month</time>Git ignore LaTex output files</li>
+          <li><a href="https://github.com/claudiob/phdthesis/commit/c4e4c5faba670da57894b59f0d5fb40fcbc1fb4d">c4e4c5f</a> <time datetime="2013-09-12T17:12:16Z">last month</time>Update README.md</li>
+          <li><a href="https://github.com/claudiob/phdthesis/commits?author=claudiob">&#9657; 4 older commits</a></li>
+        </ul>
+      </li>
+
+      <li>
+         <span class="octicon mega repo"></span>
+         <h2><a href="https://github.com/topspin/id3_tags">ID3 Tags</a></h2>
+         <h3>Ruby<a title="ID3 Tags stargazers" href="https://github.com/topspin/id3_tags/stargazers"><span class="octicon git-star"></span>1</a><a title="ID3 Tags network" href="https://github.com/topspin/id3_tags/network"><span class="octicon git-branch"></span>3</a></h3>
+         <p>Ruby gem to read and write ID3 metadata from/to MP3 files.</p>
+         <ul class="commits">
+           <li><a href="https://github.com/topspin/id3_tags/commit/9a98bc3a8ad1b3b212ea1a548d8042f69587ed82">9a98bc3</a> <time datetime="2013-07-26T22:56:20Z">2 months ago</time>Ensure the gem works both in Rails 3 and 4</li>
+           <li><a href="https://github.com/topspin/id3_tags/commit/05caa3633fbfffc627f2b475b13abafd952036fa">05caa36</a> <time datetime="2013-07-26T22:56:28Z">2 months ago</time>Show code coverage on Travis CI</li>
+           <li><a href="https://github.com/topspin/id3_tags/commit/e092a9b11480a00ac9c5d14499ff3355de30361c">e092a9b</a> <time datetime="2013-07-15T22:11:48Z">3 months ago</time>Add gem dependency badge to README</li>
+           <li><a href="https://github.com/topspin/id3_tags/commits?author=topspindev">&#9657; 24 older commits</a></li>
+         </ul>
+       </li>
+
+      <li>
+         <span class="octicon mega repo"></span>
+         <h2><a href="https://github.com/claudiob/neverfails">Neverfails</a></h2>
+         <h3>Python<a title="Neverfails stargazers" href="https://github.com/claudiob/neverfails/stargazers"><span class="octicon git-star"></span>15</a><a title="Neverfails network" href="https://github.com/claudiob/neverfails/network"><span class="octicon git-branch"></span>1</a></h3>
+         <p>Beyond BDD: step definitions that write by themselves the code to make tests pass.</p>
+         <ul class="commits">
+           <li><a href="https://github.com/claudiob/neverfails/commit/7192b25aeca37574a9ea02ff4d2248bb5f035d89">7192b25</a> <time datetime="2011-07-12T23:59:23Z">2 years ago</time>Updated README: added a link to Rails branch</li>
+           <li><a href="https://github.com/claudiob/neverfails/commit/8d7c11a401ed7eba43b458fc2996b9c7738d0182">8d7c11a</a> <time datetime="2011-04-21T07:48:41Z">2 years ago</time>Fixed regex in fails.py to avoid double matches</li>
+           <li><a href="https://github.com/claudiob/neverfails/commit/df0ff228236f2b213acd210d2c5d6500307639c5">df0ff22</a> <time datetime="2011-04-20T01:10:07Z">2 years ago</time>Fixed README (removed sub-steps of Step 4)</li>
+           <li><a href="https://github.com/claudiob/neverfails/commits?author=claudiob">&#9657; 7 older commits</a></li>
+         </ul>
+       </li>
+    </ul>
+  </article>
+</body>
+</html>
