@@ -61,14 +61,14 @@ end
 def sources
   [
     {name: 'rspec-api', owner: 'rspec-api'},
-    {name: 'csswaxer'},
-    {name: 'neverfails'},
-    {name: 'monsters'},
-    {name: 'phdthesis', title: 'Ph.D. Thesis'},
-    {name: 'rails3.github.com', owner: 'rails3', title: 'Video tutorial for Rails 3'},
-    {name: 'boxoffice'},
     {name: 'dotfiles'},
-    {name: 'id3_tags', owner: 'topspin', committer: 'topspindev', title: 'ID3 Tags'},
+    {name: 'id3_tags', owner: 'topspin', committer: 'topspindev'},
+    {name: 'phdthesis'},
+    {name: 'neverfails'},
+    {name: 'csswaxer'},
+    {name: 'monsters'},
+    {name: 'rails3.github.com', owner: 'rails3'},
+    {name: 'boxoffice'},
     {name: 'scouts'},
     {name: 'radiotagmap'},
     {name: 'django-sortable', owner: 'ff0000'},
@@ -81,11 +81,21 @@ end
 
 def forks
   [
-    {name: 'rails', owner: 'rails'}, #, title: 'Ruby on Rails', description: 'My web framework of choice since 2007. A great paradigm of well-organized huge codebase'},
-    {name: 'developer.github.com', owner: 'github'}, #, title: 'GitHub API Documentation', description: 'The best example on how to build a document an API, online at <a href="http://developer.github.com">developer.github.com</a>'},
-    {name: 'python-github2', owner: 'ask'}, #, title: 'Python client for GitHub API'},
-    {name: 'website', owner: 'emberjs'}, #, title: 'Source for emberjs.com', description: 'HTML code for the documentation of the Javascript framework <a href="http://emberjs.com" title="Ember.js">Ember.js</a>'},
-    {name: 'rspec_api_documentation', owner: 'zipmark'}, #, title: 'RSpec API Doc generator', description: 'Automatically generate pretty API documentation for your Rails APIs'},
+    {name: 'rails', owner: 'rails'},
+    {name: 'developer.github.com', owner: 'github'},
+    {name: 'rspec_api_documentation', owner: 'zipmark'},
+    {name: 'rspec-expectations', owner: 'rspec'},
+    {name: 'website', owner: 'emberjs'},
+    {name: 'startupsanonymous', owner: 'bomatson'},
+    {name: 'rspec-collection_matchers', owner: 'rspec'},
+    {name: 'jbuilder', owner: 'rails'},
+    {name: 'rails-perftest', owner: 'rails'},
+    {name: 'rails_apps_composer', owner: 'RailsApps'},
+    {name: 'py-github', owner: 'dustin'},
+    {name: 'lettuce', owner: 'gabrielfalcao'},
+    # {name: 'python-github2', owner: 'ask'}, old, only one commit
+    # {name: 'crystallball', owner: 'bomatson'}, old, only one commit
+    # {name: 'jsonloops', owner: 'marak'}, old, only one commit
   ]
 end
 
@@ -93,11 +103,14 @@ def load_repo(repo, login, is_fork=false)
   response = get "/repos/#{repo.fetch(:owner, login)}/#{repo[:name]}"
 
   OpenStruct.new(JSON response.body).tap do |r|
-    title = is_fork ? "#{repo[:owner]}/#{repo[:name]}" : repo[:name] # TODO: Humanize
-    r.title = repo.fetch :title, title
-    r.description = repo.fetch :description, r.description
+    r.title = is_fork ? "#{repo[:owner]}/#{repo[:name]}" : repo[:name]
+    r.description = repo.fetch(:description, r.description)[0..99]
+    unless r.homepage.nil? || r.homepage.empty?
+      r.description.gsub! /^(.*?)(\S*?\s*?\S*?\s*?\S*?)$/, %Q(\\1<a href="#{r.homepage}">\\2</a>)
+    end
+    r.description = "&nbsp;" if r.description.empty?
     r.committer = repo.fetch :committer, login
-    r.new_commits, r.old_commits_count = load_commits repo, login
+    r.new_commits, r.commits_count, r.old_commits_count = load_commits repo, login
   end
 end
 
@@ -105,7 +118,7 @@ def load_commits(repo, login)
   response = get "/repos/#{repo.fetch(:owner, login)}/#{repo[:name]}/commits?author=#{repo.fetch(:committer, login)}&per_page=100"
   all_commits = JSON response.body
   three_commits = all_commits.take(3).map{|commit| load_commit commit}
-  [three_commits, [all_commits.size - 3, 0].max]
+  [three_commits, all_commits.size, [all_commits.size - 3, 0].max]
 end
 
 def load_commit(commit)
@@ -113,7 +126,6 @@ def load_commit(commit)
     c.short_sha = c.sha[0..6]
     c.timestamp = c.commit['author']['date']
     c.timestamp_ago = DateTime.parse(c.timestamp).ago
-    c.message = c.commit['message'].split("\n").first # TODO: Max 70 chars?
-    1
+    c.message = c.commit['message'].split("\n").first[0..71]
   end
 end

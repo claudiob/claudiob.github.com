@@ -11,6 +11,6 @@ repos = load_sources 'claudiob'
 is_fork = false
 File.open('index.html', 'w') {|f| f.puts erb.result}
 
-# repos = load_forks 'claudiob'
-# is_fork = true
-# File.open('forks.html', 'w') {|f| f.puts erb.result}
+repos = load_forks 'claudiob'
+is_fork = true
+File.open('forks.html', 'w') {|f| f.puts erb.result}
