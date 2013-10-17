@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>A summary of my open source projects and contributions</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link href="style.css" media="all" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <header><h1><img src="avatar.jpg" alt="<%= user.name %>"><%= user.name %></h1></header>
+  <nav>
+    <ul>
+      <% if is_fork %>
+      <li>
+        <span class="octicon repo"></span><a href="index.html">My open source projects</a>
+      </li>
+      <li class="current">
+        <span class="octicon diff-added"></span>My contributions to open source</a>
+      </li>
+      <% else %>
+      <li class="current">
+        <span class="octicon repo"></span>My open source projects
+      </li>
+      <li>
+        <span class="octicon diff-added"></span><a href="forks.html">My contributions to open source</a>
+      </li>
+      <% end %>
+    </ul>
+    <a class="follow" href="<%= user.html_url %>"><span class="octicon person-follow"></span>Follow</a>
+  </nav>
+  <aside>
+    <ul>
+      <li><span class="octicon link"></span><a href="<%= user.html_url %>">github.com/<%= user.login %></a></li>
+      <li><span class="octicon clock"></span>Joined on <%= user.joined_on %></li>
+      <li><span class="octicon person-follow"></span><%= user.followers %> GitHub followers</li>
+    </ul>
+    <h4>Coding experience</h4>
+    <div>
+        <img alt="Ruby" title="Ruby" src="logos/ruby.png" />
+        <img alt="Ruby on Rails" title="Ruby on Rails" src="logos/rails.png" />
+        <img alt="HTML" title="HTML" src="logos/html5.png" />
+        <img alt="Javascript" title="Javascript" src="logos/javascript.png" />
+        <img alt="CSS" title="CSS" src="logos/css3.png" />
+        <img alt="Git" title="Git" src="logos/git.png" />
+        <img alt="Bash" title="Bash" src="logos/bash.png" />
+        <img alt="MySQL" title="MySQL" src="logos/mysql.png" />
+        <img alt="Apache" title="Apache" src="logos/apache.png" />
+        <img alt="AWS" title="AWS" src="logos/aws.png" />
+        <img alt="Python" title="Python" src="logos/python.png" />
+        <img alt="Django" title="Django" src="logos/django.png" />
+        <img alt="Wordpress" title="Wordpress" src="logos/wordpress.png" />
+        <img alt="TeX" title="TeX" src="logos/tex.png" />
+        <img alt="Raspberry Pi" title="Raspberry Pi" src="logos/raspberrypi.png" />
+        <img alt="Redis" title="Redis" src="logos/redis.png" />
+        <img alt="MongoDB" title="MongoDB" src="logos/mongodb.png" />
+        <img alt="Lisp" title="Lisp" src="logos/lisp.png" />
+        <img alt="C++" title="C++" src="logos/cplusplus.png" />
+        <img alt="R" title="R" src="logos/r.png" />
+    </div>
+  </aside>
+  <article>
+    <ul>
+      <% repos.each do |repo| %>
+      <li>
+        <span class="octicon mega repo"></span>
+        <h2><a href="<%= repo.html_url %>"><%= repo.title %></a></h2>
+        <h3><%= repo.language %><a title="<%= repo.name %> stargazers" href="<%= repo.html_url %>/stargazers"><span class="octicon git-star"></span><%= repo.watchers_count %></a><a title="<%= repo.name %> network" href="<%= repo.html_url %>/network"><span class="octicon git-branch"></span><%= repo.forks_count %></a></h3>
+        <p><%= repo.description %></p>
+        <ul class="commits">
+          <% repo.new_commits.each do |commit| %>
+          <li><a href="<%= repo.html_url %>/commit/<%= commit.sha %>"><%= commit.short_sha %></a> <time datetime="<%= commit.timestamp %>"><%= commit.timestamp_ago %></time><%= commit.message %></li>
+          <% end %>
+          <% if repo.old_commits_count > 0 %>
+          <li><a href="<%= repo.html_url %>/commits?author=<%= repo.committer %>">&#9657; <%= repo.old_commits_count %> older commits</a></li>
+          <% end %>
+        </ul>
+      </li>
+      <% end %>
+    </ul>
+  </article>
+</body>
+</html>
