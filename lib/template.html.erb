@@ -9,22 +9,19 @@
 <body>
   <header><h1><img src="avatar.jpg" alt="<%= user.name %>"><%= user.name %></h1></header>
   <nav>
-    <ul>
-      <% if is_fork %>
+    <ul><% if is_fork %>
       <li>
         <span class="octicon repo"></span><a href="index.html">My open source projects</a>
       </li>
       <li class="current">
         <span class="octicon diff-added"></span>My contributions to open source</a>
-      </li>
-      <% else %>
+      </li><% else %>
       <li class="current">
         <span class="octicon repo"></span>My open source projects
       </li>
       <li>
         <span class="octicon diff-added"></span><a href="forks.html">My contributions to open source</a>
-      </li>
-      <% end %>
+      </li><% end %>
     </ul>
     <a class="follow" href="<%= user.html_url %>"><span class="octicon person-follow"></span>Follow</a>
   </nav>
@@ -59,41 +56,29 @@
     </div>
   </aside>
   <article>
-    <ul>
-      <% repos.each do |repo| %>
-      <li>
-        <% if is_fork %>
-        <span class="octicon mega repo-forked"></span>
-        <% else %>
-        <span class="octicon mega repo"></span>
-        <% end %>
-        <h2><a href="<%= repo.html_url %>"><%= repo.title %></a></h2>
+    <ul><% repos.each do |repo| %>
+      <li><% if is_fork %>
+        <span class="octicon mega repo-forked"></span><% else %>
+        <span class="octicon mega repo"></span><% end %>
         <h3>
-          <%= repo.language %>
-          <% if is_fork %>
+          <%= repo.language %><% if is_fork %>
           <a title="<%= repo.committer %>'s commits to <%= repo.name %>" href="<%= repo.html_url %>/commits?author=<%= repo.committer %>">
             <span class="octicon git-commit"></span><%= repo.commits_count %>
-          </a>
-          <% else %>
+          </a><% else %>
           <a title="<%= repo.name %> stargazers" href="<%= repo.html_url %>/stargazers">
             <span class="octicon git-star"></span><%= repo.watchers_count %>
           </a>
           <a title="<%= repo.name %> network" href="<%= repo.html_url %>/network">
             <span class="octicon git-branch"></span><%= repo.forks_count %>
-          </a>
-          <% end %>
+          </a><% end %>
         </h3>
+        <h2><a href="<%= repo.html_url %>"><%= repo.title %></a></h2>
         <p><%= repo.description %></p>
-        <ul class="commits">
-          <% repo.new_commits.each do |commit| %>
-          <li><a href="<%= repo.html_url %>/commit/<%= commit.sha %>"><%= commit.short_sha %></a> <time datetime="<%= commit.timestamp %>"><%= commit.timestamp_ago %></time><%= commit.message %></li>
-          <% end %>
-          <% if repo.old_commits_count > 0 %>
-          <li><a href="<%= repo.html_url %>/commits?author=<%= repo.committer %>">&#9657; <%= repo.old_commits_count %> older <% if repo.old_commits_count == 1 %>commit<% else %>commits<% end %></a></li>
-          <% end %>
+        <ul class="commits"><% repo.new_commits.each do |commit| %>
+          <li><a href="<%= repo.html_url %>/commit/<%= commit.sha %>"><%= commit.short_sha %></a> <time datetime="<%= commit.timestamp %>"><%= commit.timestamp_ago %></time><%= commit.message %></li><% end %><% if repo.old_commits_count > 0 %>
+          <li><a href="<%= repo.html_url %>/commits?author=<%= repo.committer %>">&#9657; <%= repo.old_commits_count %> older <% if repo.old_commits_count == 1 %>commit<% else %>commits<% end %></a></li><% end %>
         </ul>
-      </li>
-      <% end %>
+      </li><% end %>
     </ul>
   </article>
 </body>
