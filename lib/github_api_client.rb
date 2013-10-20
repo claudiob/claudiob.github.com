@@ -61,12 +61,12 @@ end
 def sources
   [
     {name: 'rspec-api', owner: 'rspec-api'},
-    {name: 'dotfiles'},
+    {name: 'monsters'},
     {name: 'id3_tags', owner: 'topspin', committer: 'topspindev'},
     {name: 'phdthesis'},
+    {name: 'dotfiles'},
     {name: 'neverfails'},
     {name: 'csswaxer'},
-    {name: 'monsters'},
     {name: 'rails3.github.com', owner: 'rails3'},
     {name: 'boxoffice'},
     {name: 'scouts'},
