@@ -83,6 +83,7 @@ def forks
   [
     {name: 'rails', owner: 'rails'},
     {name: 'developer.github.com', owner: 'github'},
+    {name: 'IMGKit', owner: 'csquared', committer: 'topspindev'},
     {name: 'rspec_api_documentation', owner: 'zipmark'},
     {name: 'rspec-expectations', owner: 'rspec'},
     {name: 'website', owner: 'emberjs'},
