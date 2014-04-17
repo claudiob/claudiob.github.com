@@ -60,11 +60,12 @@ end
 
 def sources
   [
+    {name: 'googol', owner: 'fullscreeninc'},
     {name: 'rspec-api', owner: 'rspec-api'},
     {name: 'monsters'},
     {name: 'neverfails'},
+    {name: 'id3_tags', owner: 'ArtistLink', committer: 'topspindev'},
     {name: 'csswaxer'},
-    {name: 'id3_tags', owner: 'topspin', committer: 'topspindev'},
     {name: 'phdthesis'},
     {name: 'dotfiles'},
     {name: 'rails3.github.com', owner: 'rails3'},
