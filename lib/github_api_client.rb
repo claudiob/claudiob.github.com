@@ -60,7 +60,7 @@ end
 
 def sources
   [
-    {name: 'googol', owner: 'fullscreeninc'},
+    {name: 'yt', owner: 'Fullscreen'},
     {name: 'rspec-api', owner: 'rspec-api'},
     {name: 'monsters'},
     {name: 'neverfails'},
