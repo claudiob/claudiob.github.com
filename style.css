@@ -7,6 +7,7 @@ p                                     {font-size: 0.95em}
 h3, .commits                          {font-size: 0.85em}
 body                                  {line-height: 1.5em}
 h1                                    {font-weight: 100}
+nav li.current                        {font-weight: bold}
 a                                     {text-decoration: none}
 a:hover, a:focus                      {text-decoration: underline}
 

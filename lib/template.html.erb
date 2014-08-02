@@ -10,18 +10,20 @@
   <header><h1><img src="avatar.jpg" alt="<%= user.name %>"><%= user.name %></h1></header>
   <nav>
     <ul><% if is_fork %>
+      <li>
+        <span class="octicon repo"></span><a href="index.html">My open source projects</a>
+      </li>
       <li class="current">
         <span class="octicon diff-added"></span>My contributions to open source</a>
       </li>
-      <li>
-        <span class="octicon repo"></span><a href="mine.html">My open source projects</a>
-      </li><% else %>
-      <li>
-        <span class="octicon diff-added"></span><a href="index.html">My contributions to open source</a>
-      </li>
+      <% else %>
       <li class="current">
         <span class="octicon repo"></span>My open source projects
-      </li><% end %>
+      </li>
+      <li>
+        <span class="octicon diff-added"></span><a href="contributions.html">My contributions to open source</a>
+      </li>
+      <% end %>
     </ul>
     <a class="follow" href="<%= user.html_url %>"><span class="octicon person-follow"></span>Follow</a>
   </nav>
