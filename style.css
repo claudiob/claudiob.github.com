@@ -14,7 +14,8 @@ a:hover, a:focus                      {text-decoration: underline}
 /* COLORS */
 body, h1,
 nav li.current                        {background-color: #fff}
-body                                  {color: #565656}
+nav li.other, nav li.other a          {color: #03f}
+body                                  {color: #675656}
 a                                     {color: #4183c4}
 article a:visited                     {color: #81a3c4}
 h3, time, h3 a, h3 a:visited          {color: #888}
