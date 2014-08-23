@@ -85,6 +85,7 @@ def forks
   [
     {name: 'rails', owner: 'rails'},
     {name: 'developer.github.com', owner: 'github'},
+    {name: 'shields', owner: 'badges'},
     {name: 'jbuilder', owner: 'rails'},
     {name: 'rspec-expectations', owner: 'rspec'},
     {name: 'mock_redis', owner: 'causes'},
