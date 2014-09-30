@@ -60,8 +60,8 @@ end
 
 def sources
   [
-    {name: 'yt', owner: 'Fullscreen'},
     {name: 'bh', owner: 'Fullscreen'},
+    {name: 'yt', owner: 'Fullscreen'},
     {name: 'rspec-api', owner: 'rspec-api'},
     {name: 'monsters'},
     {name: 'neverfails'},
@@ -84,6 +84,7 @@ end
 def forks
   [
     {name: 'rails', owner: 'rails'},
+    {name: 'padrino-framework', owner: 'padrino'},
     {name: 'developer.github.com', owner: 'github'},
     {name: 'shields', owner: 'badges'},
     {name: 'jbuilder', owner: 'rails'},
