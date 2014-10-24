@@ -84,6 +84,7 @@ end
 def forks
   [
     {name: 'rails', owner: 'rails'},
+    {name: 'arel', owner: 'rails' },
     {name: 'padrino-framework', owner: 'padrino'},
     {name: 'developer.github.com', owner: 'github'},
     {name: 'shields', owner: 'badges'},
