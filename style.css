@@ -13,8 +13,7 @@ a:hover, a:focus                      {text-decoration: underline}
 
 /* COLORS */
 body, h1,
-nav li.current                        {background-color: #fff}
-nav li.other, nav li.other a          {color: #03f}
+nav li.current, body > div            {background-color: #fff}
 body                                  {color: #675656}
 a                                     {color: #4183c4}
 article a:visited                     {color: #81a3c4}
@@ -27,6 +26,7 @@ li, header, nav, aside ul, article ul {border-color: #ddd}
 /* WIDTHS */
 body                                  {width: 960px}
 header, aside                         {width: 221px}
+article                               {margin-left: 221px}
 article, nav                          {width: 721px}
 aside img, header img                 {width: 36px}
 h2, h3, ul, li, p                     {margin: 0; padding: 0}
@@ -47,15 +47,19 @@ nav li.current                        {padding-right: 17px; border-right-width: 
 
 /* HEIGHTS */
 header, header img, nav, aside img    {height: 36px}
+aside                                 {margin-top: 116px}
+article                               {margin-top: 100px}
 .commits                              {margin-top: 9px}
 aside img                             {margin-bottom: 9px}
-body, h1, aside li                    {margin-top: 18px}
+h1, aside li                          {margin-top: 18px}
+body > div                            {padding-top: 18px}
 body, aside li, article>ul>li, h4     {margin-bottom: 18px}
 article>ul>li                         {padding-bottom: 18px}
 nav                                   {margin-bottom: 36px}
 nav li, .follow                       {line-height: 36px}
 header, nav, aside ul, article>ul>li  {border-bottom-width: 1px}
 nav li.current                        {border-top-width: 1px}
+body                                  {margin-top: 0}
 
 /* LAYOUT */
 header, nav, article,
@@ -66,6 +70,7 @@ nav, article                          {clear: right}
 h1, nav ul, nav li                    {display: inline-block}
 h2, h3                                {display: inline}
 h1 img                                {vertical-align: middle}
+body > div, aside                     {position: fixed}
 
 header, nav, aside ul, article>ul>li  {border-bottom-style: solid}
 nav li.current                        {border-style: solid solid none solid}
