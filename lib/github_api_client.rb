@@ -90,7 +90,6 @@ def forks
     {name: 'shields', owner: 'badges'},
     {name: 'jbuilder', owner: 'rails'},
     {name: 'rspec-expectations', owner: 'rspec'},
-    {name: 'mock_redis', owner: 'causes'},
     {name: 'AListApart', owner: 'alistapart'},
     {name: 'rspec_api_documentation', owner: 'zipmark'},
     {name: 'IMGKit', owner: 'csquared', committer: 'topspindev'},
