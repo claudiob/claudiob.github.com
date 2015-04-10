@@ -1,88 +1,56 @@
-/* TYPOGRAPHY */
-body                                  {font-family: Helvetica, Arial, sans-serif}
-.commits a                            {font-family: "Andale Mono", Courier, monospace}
-body                                  {font-size: 0.85em}
-h1, h2                                {font-size: 1.50em}
-p                                     {font-size: 0.95em}
-h3, .commits                          {font-size: 0.85em}
-body                                  {line-height: 1.5em}
-h1                                    {font-weight: 100}
-nav li.current                        {font-weight: bold}
-a                                     {text-decoration: none}
-a:hover, a:focus                      {text-decoration: underline}
-
 /* COLORS */
-body, h1,
-nav li.current, body > div            {background-color: #fff}
-body                                  {color: #675656}
-a                                     {color: #4183c4}
-article a:visited                     {color: #81a3c4}
-h3, time, h3 a, h3 a:visited          {color: #888}
-a:focus, a:hover, article a:focus,
-article a:hover                       {color: #3173c4}
-.octicon.mega                         {color: #bbb}
-li, header, nav, aside ul, article ul {border-color: #ddd}
+body, a                               {background-color: #ebebeb}
+li.light                              {color: white}
+li.dark                               {color: black}
+li.light aside                        {color: #ebebeb}
+li.dark aside                         {color: #141414}
+
+a                                     {color: #22f}
+a:focus, a:hover                      {color: #551a8b}
+a:visited                             {color: #439}
+a:active                              {color: #f22}
 
 /* WIDTHS */
 body                                  {width: 960px}
-header, aside                         {width: 221px}
-article                               {margin-left: 221px}
-article, nav                          {width: 721px}
-aside img, header img                 {width: 36px}
-h2, h3, ul, li, p                     {margin: 0; padding: 0}
-body                                  {margin-left: auto}
-body                                  {margin-right: auto}
-header, aside, h3 .octicon, time      {margin-left: 9px}
-article, nav, time, h1 img,
-aside img                             {margin-right: 9px}
-h1                                    {padding-left: 9px}
-h1, .octicon                          {padding-right: 9px}
-h1                                    {margin-left: 18px}
-h1                                    {margin-right: 18px}
-nav li, article>ul                    {padding-left: 18px}
-nav li, .octicon.mega                 {padding-right: 18px}
-nav li.current                        {padding-left: 17px; border-left-width: 1px}
-nav li.current                        {padding-right: 17px; border-right-width: 1px}
-
+@media (max-width:960px) {body        {width: 480px} }
+li                                    {width: 376px; padding-left: 15px;  padding-right: 15px}
+a                                     {width: 370px; padding-left: 3px; padding-right: 3px}
+body                                  {margin-left: auto; margin-right: auto}
+ul                                    {padding-left: 0; padding-right: 0}
+li.left                               {margin-left: 52px;  margin-right: 12px}
+li.right                              {margin-left: 12px;  margin-right: 52px}
 
 /* HEIGHTS */
-header, header img, nav, aside img    {height: 36px}
-aside                                 {margin-top: 116px}
-article                               {margin-top: 100px}
-.commits                              {margin-top: 9px}
-aside img                             {margin-bottom: 9px}
-h1, aside li                          {margin-top: 18px}
-body > div                            {padding-top: 18px}
-body, aside li, article>ul>li, h4     {margin-bottom: 18px}
-article>ul>li                         {padding-bottom: 18px}
-nav                                   {margin-bottom: 36px}
-nav li, .follow                       {line-height: 36px}
-header, nav, aside ul, article>ul>li  {border-bottom-width: 1px}
-nav li.current                        {border-top-width: 1px}
 body                                  {margin-top: 0}
+li                                    {height: 276px; padding-top: 15px; padding-bottom: 15px; margin-top: 12px;  margin-bottom: 12px}
+a                                     {height: 24px; padding-top: 3px; padding-bottom: 3px}
+h1                                    {height: 50px}
+h1,h2                                 {margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0}
+article                               {height: 184px; margin-bottom: 12px;}
 
 /* LAYOUT */
-header, nav, article,
-aside, .octicon.mega                  {float: left}
-.follow, h3                           {float: right}
-header, aside                         {clear: left}
-nav, article                          {clear: right}
-h1, nav ul, nav li                    {display: inline-block}
-h2, h3                                {display: inline}
-h1 img                                {vertical-align: middle}
-body > div, aside                     {position: fixed}
+li, a                                 {display: inline-block}
+a                                     {outline: 0}
+aside                                 {float: right}
 
-header, nav, aside ul, article>ul>li  {border-bottom-style: solid}
-nav li.current                        {border-style: solid solid none solid}
-ul                                    {list-style: none}
+/* TYPOGRAPHY */
+body                                  {font-family: octicon, monospace}
+h1                                    {font-family: octicans, Helvetica, sans-serif; font-weight: normal}
+h1,h2                                 {font-weight: normal}
+a                                     {text-align: center}
+aside                                 {text-align: right}
+a                                     {text-decoration: none}
+h1                                    {font-size: 34px}
+a                                     {font-size: 20px}
+body                                  {font-size: 16px}
+h2,aside                              {font-size: 14px}
+a,article                             {overflow: hidden}
+aside                                 {line-height: 20px}
 
-/* Browser-specific properties */
-h1 img {border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px}
-aside img {-webkit-opacity: 0.7; -moz-opacity: 0.7; filter:alpha(opacity=70); opacity: 0.7;}
 
 /* GitHub octicons */
 @font-face{
-  font-family: 'octicons';
+  font-family: 'octicans';
   src: url("fonts/octicons.eot");
   src: url("fonts/octicons.eot#iefix") format("embedded-opentype"),
        url("fonts/octicons.woff") format("woff"),
@@ -90,14 +58,26 @@ aside img {-webkit-opacity: 0.7; -moz-opacity: 0.7; filter:alpha(opacity=70); op
        url("fonts/octicons.svg#octicons") format("svg");
   font-weight:normal;
   font-style:normal}
+
+@font-face{
+  font-family: 'octicon';
+  src: url("fonts/octicon.eot");
+  src: url("fonts/octicon.eot#iefix") format("embedded-opentype"),
+       url("fonts/octicon.woff") format("woff"),
+       url("fonts/octicon.ttf") format("truetype"),
+       url("fonts/octicon.svg#octicon") format("svg");
+  font-weight:normal;
+  font-style:normal}
+
+@font-face{
+  font-family: 'octicons';
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/octicons/2.2.2/octicons.eot");
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/octicons/2.2.2/octicons.eot#iefix") format("embedded-opentype"),
+       url("https://cdnjs.cloudflare.com/ajax/libs/octicons/2.2.2/octicons.woff") format("woff"),
+       url("https://cdnjs.cloudflare.com/ajax/libs/octicons/2.2.2/octicons.ttf") format("truetype"),
+       url("https://cdnjs.cloudflare.com/ajax/libs/octicons/2.2.2/octicons.svg#octicons") format("svg");
+  font-weight:normal;
+  font-style:normal}
 .octicon{font:normal normal 16px octicons;line-height:1;display:inline-block;text-decoration:none;-webkit-font-smoothing:antialiased}
-.octicon.mega{font-size: 32px}
-.octicon.repo:before{content:'\f001'}
-.octicon.repo-forked:before{content:'\f002'}
-.octicon.diff-added:before{content:'\f06b'}
-.octicon.person-follow:before{content:'\f01c'}
-.octicon.link:before{content:'\f05c'}
-.octicon.clock:before{content:'\f046'}
 .octicon.git-commit:before{content:'\f01f'}
-.octicon.git-branch:before{content:'\f020'}
 .octicon.git-star:before{content:'\f02a'}

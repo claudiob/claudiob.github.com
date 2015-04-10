@@ -1,29 +1,6 @@
 require 'faraday'
 require 'json'
-require 'date'
 require 'ostruct'
-require 'date'
-
-module DateTimeAgo
-  def ago
-    days_ago = (DateTime.now - self).to_i
-    week = 7
-    month = week*52/12
-    year = month*12
-    case days_ago
-      when 0..1 then 'today'
-      when 1..2 then 'yesterday'
-      when 2..week then "#{days_ago} days ago"
-      when week..2*week then 'last week'
-      when 2*week..month then "#{(days_ago/week).to_i} weeks ago"
-      when month..2*month then 'last month'
-      when 2*month..year then "#{(days_ago/month).to_i} months ago"
-      when year..2*year then 'last year'
-      else "#{(days_ago/year).to_i} years ago"
-    end
-  end
-end
-DateTime.send :include, DateTimeAgo
 
 def connection
   @connection ||= new_connection
@@ -38,101 +15,36 @@ def new_connection
   end
 end
 
-def get(route)
-  connection.get route
-end
-
-def load_user(login)
-  response = get "/users/#{login}"
-
-  OpenStruct.new(JSON response.body).tap do |user|
-    user.joined_on = DateTime.parse(user.created_at).strftime('%b %d, %Y')
-  end
-end
-
 def load_sources(login)
-  sources.map{|source| load_repo source, login}
-end
-
-def load_forks(login)
-  forks.map{|source| load_repo source, login, true}
+  sources.map.with_index{|source, i| load_repo source, login, i}
 end
 
 def sources
   [
-    {name: 'bh', owner: 'Fullscreen'},
-    {name: 'yt', owner: 'Fullscreen'},
-    {name: 'rspec-api', owner: 'rspec-api'},
-    {name: 'monsters'},
-    {name: 'neverfails'},
-    {name: 'id3_tags', owner: 'ArtistLink', committer: 'topspindev'},
-    {name: 'csswaxer'},
-    {name: 'phdthesis'},
-    {name: 'dotfiles'},
-    {name: 'rails3.github.com', owner: 'rails3'},
-    {name: 'boxoffice'},
-    {name: 'scouts'},
-    {name: 'radiotagmap'},
-    {name: 'django-sortable', owner: 'ff0000'},
-    {name: 'available_twitter_usernames'},
-    {name: 'affinity'},
-    {name: 'ff0000.github.com', owner: 'ff0000'},
-    {name: 'yesradio'},
+    {name: 'bh',         background: '#be64b4', border: '#96508e', style: 'light', title: 'Bh',             year: '2014–',     url: 'fullscreen.github.io/bh',             owner: 'Fullscreen'},
+    {name: 'yt',         background: '#10a17c', border: '#0e8c6d', style: 'light', title: 'Yt',             year: '2014–',     url: 'github.com/fullscreen/yt',            owner: 'Fullscreen'},
+    {name: 'rails',      background: '#c3312b', border: '#ad2b26', style: 'light', title: 'Ruby on Rails',  year: '2012–',     url: 'github.com/rails/rails/commits',      owner: 'rails', query: '?author=claudiob', fork: true},
+    {name: 'rspec-api',  background: '#d12655', border: '#a31d41', style: 'light', title: 'RSpec API',      year: '2013–2014', url: 'rspec-api.github.io',                 owner: 'rspec-api'},
+#    {name: 'monsters',   background: '#91d2cb', border: '#82bdb7', style: 'dark',  title: 'Music Monsters', year: '2010',      url: 'musicmonsters.herokuapp.com',         }, # comment out (fix first)
+    {name: 'boxoffice',  background: '#fff373', border: '#ebe06a', style: 'dark',  title: 'Boxoffice',      year: '2009',      url: 'sub.boxoffice.es',                    },
+    {name: 'csswaxer',   background: '#53c265', border: '#4bad5b', style: 'light', title: 'CSSWaxer',       year: '2010',      url: 'github.com/claudiob/csswaxer', },
+#    {name: 'neverfails', background: '#070d80', border: '#050961', style: 'light', title: 'Neverfails',     year: '2011',      url: 'speakerdeck.com/claudiob/neverfails',        }, # comment out (fix first and change speakerdeck link)
   ]
 end
 
-def forks
-  [
-    {name: 'rails', owner: 'rails'},
-    {name: 'arel', owner: 'rails' },
-    {name: 'padrino-framework', owner: 'padrino'},
-    {name: 'developer.github.com', owner: 'github'},
-    {name: 'shields', owner: 'badges'},
-    {name: 'jbuilder', owner: 'rails'},
-    {name: 'rspec-expectations', owner: 'rspec'},
-    {name: 'AListApart', owner: 'alistapart'},
-    {name: 'rspec_api_documentation', owner: 'zipmark'},
-    {name: 'IMGKit', owner: 'csquared', committer: 'topspindev'},
-    {name: 'website', owner: 'emberjs'},
-    {name: 'startupsanonymous', owner: 'bomatson'},
-    {name: 'rspec-collection_matchers', owner: 'rspec'},
-    {name: 'rails-perftest', owner: 'rails'},
-    {name: 'rails_apps_composer', owner: 'RailsApps'},
-    {name: 'py-github', owner: 'dustin'},
-    {name: 'lettuce', owner: 'gabrielfalcao'},
-    # {name: 'python-github2', owner: 'ask'}, old, only one commit
-    # {name: 'crystallball', owner: 'bomatson'}, old, only one commit
-    # {name: 'jsonloops', owner: 'marak'}, old, only one commit
-  ]
-end
+def load_repo(repo, login, index)
+  response = connection.get "/repos/#{repo.fetch(:owner, login)}/#{repo[:name]}"
+  body = JSON response.body
 
-def load_repo(repo, login, is_fork=false)
-  response = get "/repos/#{repo.fetch(:owner, login)}/#{repo[:name]}"
-
-  OpenStruct.new(JSON response.body).tap do |r|
-    r.title = is_fork ? "#{repo[:owner]}/#{repo[:name]}" : repo[:name]
-    r.description = repo.fetch(:description, r.description)[0..99]
-    unless r.homepage.nil? || r.homepage.empty?
-      r.description.gsub! /^(.*?)(\S*?\s*?\S*?\s*?\S*?)$/, %Q(\\1<a href="#{r.homepage}">\\2</a>)
-    end
-    r.description = "&nbsp;" if r.description.empty?
-    r.committer = repo.fetch :committer, login
-    r.new_commits, r.commits_count, r.old_commits_count = load_commits repo, login
+  OpenStruct.new(repo).tap do |r|
+    r.description = body['description']
+    r.count = repo[:fork] ? load_commits(repo, login) : body['watchers_count']
+    r.icon  = repo[:fork] ? :commit : :star
+    r.klass = index.even? ? 'left' : 'right'
   end
 end
 
 def load_commits(repo, login)
-  response = get "/repos/#{repo.fetch(:owner, login)}/#{repo[:name]}/commits?author=#{repo.fetch(:committer, login)}&per_page=100"
-  all_commits = JSON response.body
-  three_commits = all_commits.take(3).map{|commit| load_commit commit}
-  [three_commits, all_commits.size, [all_commits.size - 3, 0].max]
-end
-
-def load_commit(commit)
-  OpenStruct.new(commit).tap do |c|
-    c.short_sha = c.sha[0..6]
-    c.timestamp = c.commit['author']['date']
-    c.timestamp_ago = DateTime.parse(c.timestamp).ago
-    c.message = c.commit['message'].split("\n").first[0..71]
-  end
+  response = connection.get "/repos/#{repo.fetch(:owner, login)}/#{repo[:name]}/commits?author=#{repo.fetch(:committer, login)}&per_page=100"
+  JSON(response.body).size
 end
