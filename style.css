@@ -45,7 +45,7 @@ a                                     {font-size: 20px}
 body                                  {font-size: 16px}
 h2,aside                              {font-size: 14px}
 a,article                             {overflow: hidden}
-aside                                 {line-height: 20px}
+aside,article                         {line-height: 20px}
 
 
 /* GitHub octicons */
