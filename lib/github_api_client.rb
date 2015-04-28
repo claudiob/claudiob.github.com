@@ -28,17 +28,20 @@ def sources
     {name: 'rspec-api',  background: '#d12655', border: '#a31d41', style: 'light', title: 'RSpec API',      year: '2013–2014', url: 'rspec-api.github.io',                 owner: 'rspec-api', lines: [%q{I built a gem on top of RSpec to help coders write concise tests for resourceful web APIs.}, %q{Whether you need to test a third-party API or are building your own, RSpec API can help you.}]},
     {name: 'boxoffice',  background: '#fff373', border: '#ebe06a', style: 'dark',  title: 'Boxoffice',      year: '2009',      url: 'sub.boxoffice.es', lines: [%q{Did you know that &ldquo;Titanic&rdquo; was still making money after 40 weeks in the theaters? Or that &ldquo;My Big Fat Greek Wedding&rdquo; had its strongest week 4 months after being released?}, %q{Plot and compare the box office results of any movie with this simple app I wrote in Python.}]},
     {name: 'csswaxer',   background: '#53c265', border: '#4bad5b', style: 'light', title: 'CSSWaxer',       year: '2010',      url: 'github.com/claudiob/csswaxer', lines: [%q{Go on, inspect the code of this page and check out how I write CSS files. How does it feel?}, %q{If you also think organizing rules by property is a good idea (color, typography, layout…), this Ruby script will help you clean your CSS.}]},
-#    {name: 'neverfails', background: '#070d80', border: '#050961', style: 'light', title: 'Neverfails',     year: '2011',      url: 'speakerdeck.com/claudiob/neverfails',        }, # comment out (fix first and change speakerdeck link)
+    # {name: 'neverfails', background: '#070d80', border: '#050961', style: 'light', title: 'Neverfails',     year: '2011',      url: 'speakerdeck.com/claudiob/neverfails', lines: [%q{a.}, %q{b}]}, # comment out (fix first and change speakerdeck link)
+    {background: '#070d80', border: '#050961', style: 'light', title: '…and more!',url: 'speakerdeck.com/claudiob', lines: [%q{Feeling brave? Browse github.com/claudiob and you might find more hidden gems (pun intended).}, %q{I love open source code, and hope you do too. I’m a passionate public speaker and performer. You can check out the slides of my recent talks on SpeakerDeck. }]},
   ]
 end
 
 def load_repo(repo, login, index)
-  response = connection.get "/repos/#{repo.fetch(:owner, login)}/#{repo[:name]}"
-  body = JSON response.body
-
   OpenStruct.new(repo).tap do |r|
-    r.description = body['description']
-    r.count = repo[:fork] ? load_commits(repo, login) : body['watchers_count']
+    if repo[:name]
+      response = connection.get "/repos/#{repo.fetch(:owner, login)}/#{repo[:name]}"
+      body = JSON response.body
+      r.description = body['description']
+      r.count = repo[:fork] ? load_commits(repo, login) : body['watchers_count']
+    end
+
     r.icon  = repo[:fork] ? :commit : :star
     r.klass = index.even? ? 'left' : 'right'
   end

@@ -11,13 +11,17 @@
 <body>
   <ul><% repos.each do |repo| %>
     <li class="<%= repo.klass %> <%= repo.style %>" style="background-image: url(images/<%= repo.name %>-out.png)">
-      <aside>
-        <%= repo.year %><br />
-        <%= repo.count %> <span class="octicon git-<%= repo.icon %>"></span>
-      </aside>
+      <% if repo.count %>
+        <aside>
+          <%= repo.year %><br />
+          <%= repo.count %> <span class="octicon git-<%= repo.icon %>"></span>
+        </aside>
+      <% end %>
       <h1 style="text-shadow: 2px 2px 4px <%= repo.border %>"><%= repo.title %></h1>
       <article>
-        <h2><%= repo.description %>.</h2>
+        <% if repo.description %>
+          <h2><%= repo.description %>.</h2>
+        <% end %>
         <% repo.lines.each do |line| %><p><%= line %></p>
         <% end %>
       </article>
