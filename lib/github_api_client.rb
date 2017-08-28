@@ -49,6 +49,6 @@ def load_repo(repo, login, index)
 end
 
 def load_commits(repo, login)
-  response = connection.get "/repos/#{repo.fetch(:owner, login)}/#{repo[:name]}/commits?author=#{repo.fetch(:committer, login)}&per_page=100&page=2"
-  JSON(response.body).size + 100
+  response = connection.get "/repos/#{repo.fetch(:owner, login)}/#{repo[:name]}/commits?author=#{repo.fetch(:committer, login)}&per_page=100&page=3"
+  JSON(response.body).size + 200
 end
