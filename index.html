@@ -7,7 +7,15 @@
   <meta name='googlebot' content='noindex'>
   <meta charset="utf-8" />
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:title" content="Claudio Baccigalupo’s code" />
+  <meta property="og:description" content="Zeros and ones. Two and two sometimes make five." />
+  <meta property="og:url" content="https://claudiob.github.io/" />
+  <meta property="og:image" content="https://claudiob.github.io/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link href="style.css" media="all" rel="stylesheet" type="text/css">
 </head>
 <body style='text-align: center'>
@@ -36,7 +44,7 @@
             </g>
             <circle cx="188" cy="12" r="5" fill="#fdf2ef" opacity="0.8"/>
           </svg>
-          <h4>On the Rails Team: triaging,<br />hosting meetups, writing the newsletter.</h4>
+          <h4>Since 2007: main contributor,<br />meetup host, newsletter author.</h4>
         </article>
       </a>
     </li>
@@ -185,28 +193,88 @@
       <a class="card" href="https://claudiob.github.io/unicon" style="background-color: #ffd9ea">
         <h1>Unicon</h1>
         <article>
-          <svg class="art" viewBox="0 0 376 132" role="img" aria-label="A unicorn with a flat-cut horn, beside the same house drawn three ways">
-            <g transform="translate(-18.8 0)">
-            <path d="M150 30 C168 40 180 62 178 86 C176 62 160 50 144 48 Z" fill="#ff8ec7"/>
-            <path d="M154 52 C172 62 182 82 178 104 C172 84 158 74 146 72 Z" fill="#b98cff"/>
-            <path d="M156 128 L156 70 C156 44 138 26 112 26 C96 26 82 34 72 48
-                     C62 62 52 72 46 82 C40 92 42 104 52 108 C64 113 78 112 92 108
-                     C104 105 114 108 118 118 L120 128 Z" fill="#ffffff"/>
-            <path d="M118 28 L130 24 L124 2 L112 6 Z" fill="#ffc857" stroke="#e8a93c" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M132 30 L146 16 L148 38 Z" fill="#fdeef5" stroke="#efc4da" stroke-width="2" stroke-linejoin="round"/>
-            <circle cx="98" cy="56" r="6.5" fill="#3a2a44"/>
-            <circle cx="100.5" cy="53.5" r="2.3" fill="#fff"/>
-            <ellipse cx="56" cy="92" rx="9" ry="6.5" fill="#ffc0dd"/>
-            <circle cx="50" cy="86" r="2.6" fill="#3a2a44"/>
-            <g transform="translate(210 40)" stroke="#6b4d7a" fill="none" stroke-width="3" stroke-linejoin="round">
+          <svg class="art" viewBox="0 0 376 132" role="img" aria-label="Unicon the unicorn with her flat-cut horn, beside the same house drawn three ways">
+            <g transform="translate(13.05 -15.6) scale(0.635)">
+              <defs>
+              <linearGradient id='u-mane' x1='0' y1='0' x2='0.9' y2='1'>
+              <stop offset='0%' stop-color='#FFA9D2'/>
+              <stop offset='52%' stop-color='#C9A6FF'/>
+              <stop offset='100%' stop-color='#9BE8D8'/>
+              </linearGradient>
+              <linearGradient id='u-horn' x1='0' y1='1' x2='0' y2='0'>
+              <stop offset='0%' stop-color='#FFB3D6'/>
+              <stop offset='100%' stop-color='#FFE1A8'/>
+              </linearGradient>
+              </defs>
+              <g fill='#5C1B3D'>
+              <circle cx='72' cy='118' r='33'/><circle cx='60' cy='160' r='29'/>
+              <circle cx='78' cy='198' r='25'/><circle cx='188' cy='118' r='33'/>
+              <circle cx='200' cy='160' r='29'/><circle cx='182' cy='198' r='25'/>
+              <circle cx='100' cy='86' r='29'/><circle cx='160' cy='86' r='29'/>
+              <circle cx='130' cy='76' r='27'/>
+              </g>
+              <g fill='url(#u-mane)'>
+              <circle cx='72' cy='118' r='30'/><circle cx='60' cy='160' r='26'/>
+              <circle cx='78' cy='198' r='22'/><circle cx='188' cy='118' r='30'/>
+              <circle cx='200' cy='160' r='26'/><circle cx='182' cy='198' r='22'/>
+              <circle cx='100' cy='86' r='26'/><circle cx='160' cy='86' r='26'/>
+              <circle cx='130' cy='76' r='24'/>
+              </g>
+              <g fill='#FFE7F1' stroke='#5C1B3D' stroke-width='3.5' stroke-linejoin='round'>
+              <path d='M96 104C80 88 70 66 77 53c16 8 27 29 33 47z'/>
+              <path d='M164 104c16-16 26-38 19-51-16 8-27 29-33 47z'/>
+              </g>
+              <g fill='#FFD2E5'>
+              <path d='M99 96c-9-11-14-24-11-31 9 6 15 19 18 30z'/>
+              <path d='M161 96c9-11 14-24 11-31-9 6-15 19-18 30z'/>
+              </g>
+              <ellipse cx='130' cy='154' rx='66' ry='62' fill='#FFE7F1' stroke='#5C1B3D'
+              stroke-width='3.5'/>
+              <g fill='url(#u-mane)' stroke='#5C1B3D' stroke-width='3.5' stroke-linejoin='round'>
+              <path d='M96 120c-2-20 4-34 16-42-4 16-4 28 1 42z'/>
+              <path d='M147 120c6-18 16-30 29-34-11 13-16 23-16 34z'/>
+              </g>
+              <g stroke='#5C1B3D' stroke-width='3.5' stroke-linejoin='round'>
+              <path d='M114 108 121 54h18l7 54z' fill='url(#u-horn)'/>
+              <path d='M121 54h18' stroke-width='4'/>
+              <ellipse cx='130' cy='54' rx='9' ry='3.6' fill='#FFE1A8'/>
+              </g>
+              <g stroke='#5C1B3D' stroke-width='2.2' stroke-linecap='round' opacity='0.6'>
+              <path d='M116.5 94 143.5 90'/><path d='M118.5 80 141.5 77'/>
+              <path d='M120.5 66 139.5 64'/>
+              </g>
+              <g fill='#5C1B3D'>
+              <ellipse cx='104' cy='160' rx='14' ry='17.5'/>
+              <ellipse cx='156' cy='160' rx='14' ry='17.5'/>
+              </g>
+              <g fill='#FFFFFF'>
+              <circle cx='99' cy='153' r='5.6'/><circle cx='109.5' cy='167' r='2.7'/>
+              <circle cx='151' cy='153' r='5.6'/><circle cx='161.5' cy='167' r='2.7'/>
+              </g>
+              <g stroke='#5C1B3D' stroke-width='3' stroke-linecap='round' fill='none'>
+              <path d='M86 141c-4-3-7-5-11-6'/><path d='M90 133c-3-4-4-7-5-10'/>
+              <path d='M174 141c4-3 7-5 11-6'/><path d='M170 133c3-4 4-7 5-10'/>
+              </g>
+              <g fill='#FFA9D2' opacity='0.6'>
+              <ellipse cx='82' cy='182' rx='13' ry='8'/><ellipse cx='178' cy='182' rx='13' ry='8'/>
+              </g>
+              <ellipse cx='130' cy='192' rx='32' ry='22' fill='#FFD2E5'/>
+              <g fill='#5C1B3D' opacity='0.75'>
+              <ellipse cx='120' cy='188' rx='3' ry='4.4'/><ellipse cx='140' cy='188' rx='3' ry='4.4'/>
+              </g>
+              <path d='M119 200c4 6 8 8 11 8s7-2 11-8' fill='none' stroke='#5C1B3D' stroke-width='3.2'
+              stroke-linecap='round'/>
+              <path d='M152 34c0.9 5.2 4.4 8.7 9.6 9.6-5.2 0.9-8.7 4.4-9.6 9.6-0.9-5.2-4.4-8.7-9.6-9.6
+              5.2-0.9 8.7-4.4 9.6-9.6z' fill='#FFE1A8'/>
+            </g>
+            <g transform="translate(184 44)" stroke="#5C1B3D" fill="none" stroke-width="3" stroke-linejoin="round">
               <path d="M3 22 L20 6 L37 22 L37 44 L3 44 Z"/>
               <g transform="translate(60 0)" stroke-linecap="round">
                 <path d="M3 23 L20 7 L37 23"/><path d="M8 23 L8 44 L32 44 L32 23"/>
               </g>
-              <g transform="translate(120 0)" stroke="none" fill="#6b4d7a">
+              <g transform="translate(120 0)" stroke="none" fill="#5C1B3D">
                 <path d="M20 5 L41 24 L34 24 L34 44 L6 44 L6 24 L-1 24 Z"/>
               </g>
-            </g>
             </g>
           </svg>
           <h4>One concept, its icon in Bootstrap,<br />SF Symbols and Material.</h4>
