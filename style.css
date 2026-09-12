@@ -1,62 +1,56 @@
 /* COLORS */
-body, a                               {background-color: #ebebeb}
-li.light aside                        {color: #ebebeb}
-li.dark aside                         {color: #141414}
-li.light                              {color: white}
-li.dark                               {color: black}
-a                                     {color: #22f}
-a:focus, a:hover                      {color: #551a8b}
-a:visited                             {color: #439}
-a:active                              {color: #f22}
+body                                  {background-color: #ebebeb}
+li.light a.card                       {color: white}
+li.dark a.card                        {color: #3a2a44}
+a.home                                {color: inherit}
 
 /* WIDTHS */
-body                                  {width: 960px}
-@media (max-width:960px) {body        {width: 480px} }
-li                                    {width: 376px; padding-left: 15px;  padding-right: 15px}
-a                                     {width: 370px; padding-left: 3px; padding-right: 3px}
+body                                  {width: auto; max-width: 100%; padding-left: 24px; padding-right: 24px}
 body                                  {margin-left: auto; margin-right: auto}
 ul                                    {padding-left: 0; padding-right: 0}
-li.left                               {margin-left: 52px;  margin-right: 12px}
-li.right                              {margin-left: 12px;  margin-right: 52px}
+li                                    {width: 406px; margin-left: 12px; margin-right: 12px}
+a.card                                {width: 100%; padding-left: 15px; padding-right: 15px}
 
 /* HEIGHTS */
 body                                  {margin-top: 0}
-li                                    {height: 276px; padding-top: 15px; padding-bottom: 15px; margin-top: 12px;  margin-bottom: 12px}
-a                                     {height: 24px; padding-top: 3px; padding-bottom: 3px}
-h1                                    {height: 50px}
-h1,h2                                 {margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0}
-article                               {height: 184px; margin-bottom: 12px;}
+li                                    {margin-top: 12px; margin-bottom: 26px}
+a.card                                {height: 250px; padding-top: 15px; padding-bottom: 15px}
+h1                                    {margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0}
+a.card h1                             {height: 44px; line-height: 44px}
+a.card article                        {height: 176px}
+a.card h4                             {height: 40px; margin-top: 0; margin-bottom: 0}
+svg.art                               {margin-bottom: 8px}
 
 /* LAYOUT */
-li, a                                 {display: inline-block}
-a                                     {outline: 0}
-aside                                 {float: right}
+body                                  {box-sizing: border-box}
+ul                                    {display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start}
+ul                                    {list-style: none}
+li                                    {display: block}
+a.card                                {display: block; box-sizing: border-box}
+a.card article                        {display: flex; flex-direction: column; justify-content: flex-start}
+a.card h4                             {display: flex; flex-direction: column; justify-content: center}
+svg.art                               {display: block; width: 100%; height: auto}
 
 /* TYPOGRAPHY */
-body                                  {font-family: octicon, monospace}
-h1                                    {font-family: octicans, Helvetica, sans-serif; font-weight: normal}
-h1,h2                                 {font-weight: normal}
-a                                     {text-align: center}
-aside                                 {text-align: right}
-a                                     {text-decoration: none}
-h1                                    {font-size: 34px}
-a                                     {font-size: 20px}
+body                                  {font-family: ui-monospace, Menlo, Consolas, monospace}
+h1                                    {font-family: Helvetica, Arial, sans-serif; font-weight: normal}
+a.card h1                             {font-weight: 600; letter-spacing: -0.5px}
+h4                                    {font-weight: normal}
 body                                  {font-size: 16px}
-h2,aside                              {font-size: 14px}
-a,article                             {overflow: hidden}
-aside,article                         {line-height: 20px}
+h1                                    {font-size: 34px}
+a.card h4                             {font-size: 15px; line-height: 20px}
+h4                                    {font-size: 14px}
+a                                     {text-decoration: none}
+a.card h4                             {text-align: center}
+article                               {overflow: hidden}
 
 /* OTHER PROPERTIES */
-/* GitHub octicons */
-@font-face                            {font-family: 'octicans'; src: url("fonts/octicons.eot");
-                                       src: url("fonts/octicons.eot#iefix") format("embedded-opentype"), url("fonts/octicons.woff") format("woff"), url("fonts/octicons.ttf") format("truetype"), url("fonts/octicons.svg#octicons") format("svg");
-                                       font-weight:normal; font-style:normal}
-@font-face                            {font-family: 'octicon';  src: url("fonts/octicon.eot");
-                                       src: url("fonts/octicon.eot#iefix")  format("embedded-opentype"), url("fonts/octicon.woff") format("woff"),  url("fonts/octicon.ttf") format("truetype"),  url("fonts/octicon.svg#octicon") format("svg");
-                                       font-weight:normal; font-style:normal}
-@font-face                            {font-family: 'octicons'; src: url("https://cdnjs.cloudflare.com/ajax/libs/octicons/2.2.2/octicons.eot");
-                                       src: url("https://cdnjs.cloudflare.com/ajax/libs/octicons/2.2.2/octicons.eot#iefix") format("embedded-opentype"), url("https://cdnjs.cloudflare.com/ajax/libs/octicons/2.2.2/octicons.woff") format("woff"), url("https://cdnjs.cloudflare.com/ajax/libs/octicons/2.2.2/octicons.ttf") format("truetype"), url("https://cdnjs.cloudflare.com/ajax/libs/octicons/2.2.2/octicons.svg#octicons") format("svg");
-                                       font-weight:normal; font-style:normal}
-.octicon                              {font:normal normal 16px octicons; line-height:1; display:inline-block; text-decoration:none; -webkit-font-smoothing:antialiased}
-.octicon.git-commit:before            {content:'\f01f'}
-.octicon.git-star:before              {content:'\f02a'}
+li                                    {border-radius: 6px}
+a.card                                {border-radius: 6px}
+a.card                                {outline: 0; transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease}
+a.card:hover                          {transform: translateY(-4px); box-shadow: 0 12px 26px rgba(20, 20, 20, 0.28); filter: saturate(1.12)}
+a.card:active                         {transform: translateY(-1px); box-shadow: 0 6px 14px rgba(20, 20, 20, 0.24)}
+a.card:focus-visible                  {box-shadow: 0 0 0 3px #ebebeb, 0 0 0 6px #22f}
+@media (prefers-reduced-motion: reduce) {
+a.card                                {transition: none}
+a.card:hover                          {transform: none} }
