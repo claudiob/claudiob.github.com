@@ -19,6 +19,7 @@ h1                                    {margin-top: 0; margin-bottom: 0; padding-
 a.card h1                             {height: 44px; line-height: 44px}
 a.card article                        {height: 176px}
 a.card h4                             {height: 40px; margin-top: 0; margin-bottom: 0}
+li.more a.card                        {height: auto}
 svg.art                               {margin-bottom: 8px}
 
 /* LAYOUT */
